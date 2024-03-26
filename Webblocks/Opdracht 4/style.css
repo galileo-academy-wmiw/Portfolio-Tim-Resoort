@@ -1,0 +1,79 @@
+.body {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.block {
+    gap: 10px 10px;
+}
+
+.flex-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 10px;
+}
+
+.container-1 {
+    display: grid;
+    gap: 10px 10px;
+}
+
+.rood {
+    background-color: #f05050;
+    height: 100px;
+    grid-row: 1 / span 2;
+}
+
+.blauw  {
+    background-color: #5050f0;
+    height: calc(100% - 5px);
+}
+
+.groen  {
+    background-color: #50f050;
+    height: 200px;
+    grid-row: 1 / span 2;
+}
+
+.lichtblauw  {
+    background-color: #50f0f0;
+    height: 200px;
+}
+
+.geel  {
+    background-color: #f0f050;
+    height: 100px;
+    grid-column: 3 / span 2;
+}
+
+.roze  {
+    background-color: #f050f0;
+    height:  3 / span 2;
+}
+
+.donkerrood  {
+    background-color: #a02020;
+    height: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .rood {
+
+    }
+
+    .blauw  {
+
+    }
+
+    .geel  {
+    
+    }
+
+    .lichtblauw  {
+    
+    }
+
+    .donkerrood  {
+    
+    }
+}
