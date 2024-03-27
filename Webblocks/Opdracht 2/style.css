@@ -1,0 +1,105 @@
+body {
+    margin: 0px 0px;
+    padding: 0px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 200px;
+}
+
+.row-1 {
+    justify-content: space-evenly;
+}
+
+.row-2 {
+}
+
+.row-3 {
+    justify-content: space-evenly;
+}
+
+.row-4 {
+}
+
+.row-4_5 {
+    width: 50%;
+}
+
+.container-1 {
+    background-color: #f05050;
+    width: 70%;
+}
+
+.container-2 {
+    background-color: #50f050;
+    width: 75%;
+}
+
+.container-3 {
+    background-color: #5050f0;
+    width: 25%;
+}
+
+.container-4 {
+    background-color: #f0f050;
+    margin: 0 10px;
+    width: 50%;
+}
+
+.container-5 {
+    background-color: #f050f0;
+    width: 50%;
+}
+
+.container-6 {
+    background-color: #50f0f0;
+    width: calc(100% - 200px);
+}
+
+.container-7 {
+    background-color: #a02020;
+    width: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    .container-1 {
+        width: 100%;
+    }
+    
+    .container-2 {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .row-2 {
+        flex-direction: column-reverse;
+        height: 400px;
+    }
+
+    .container-3 {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .container-4 {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .row-4 {
+        flex-direction: column;
+        height: 400px;
+    }
+
+    .container-5 {
+        width: 100%;
+        height: 200px;
+    }
+
+    .row-4_5 {
+        width: 100%;
+    }
+}
