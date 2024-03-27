@@ -1,79 +1,78 @@
-.body {
-    padding: 10px;
-    margin-top: 10px;
+.container-row {
+    display: flex;
+    flex-direction: row;
 }
-
-.block {
-    gap: 10px 10px;
+ 
+.container-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
-
-.flex-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 10px;
-}
-
-.container-1 {
-    display: grid;
-    gap: 10px 10px;
-}
-
-.rood {
-    background-color: #f05050;
-    height: 100px;
-    grid-row: 1 / span 2;
-}
-
-.blauw  {
-    background-color: #5050f0;
-    height: calc(100% - 5px);
-}
-
-.groen  {
-    background-color: #50f050;
-    height: 200px;
-    grid-row: 1 / span 2;
-}
-
-.lichtblauw  {
-    background-color: #50f0f0;
+ 
+.container {
     height: 200px;
 }
-
-.geel  {
-    background-color: #f0f050;
+ 
+.container.rood {
+    background-color: #F05050;
+}
+ 
+.container.groen {
+    background-color: #50F050;
+}
+ 
+.container.blauw {
+    background-color: #5050F0;
+}
+ 
+.container.lichtblauw {
+    background-color: #50F0F0;
+}
+ 
+.container.geel {
+    background-color: #F0F050;
+}
+ 
+.container.roze {
+    background-color: #F050F0;
+}
+ 
+.container.donkerrood {
+    background-color: #A02020;
     height: 100px;
-    grid-column: 3 / span 2;
 }
-
-.roze  {
-    background-color: #f050f0;
-    height:  3 / span 2;
+ 
+.container.groen,
+.container.lichtblauw {
+    width: 50%;
+    height: 400px;
 }
-
-.donkerrood  {
-    background-color: #a02020;
-    height: 100px;
-}
-
+ 
 @media only screen and (max-width: 600px) {
-    .rood {
-
+ 
+    .container-row {
+        flex-direction: column;
     }
-
-    .blauw  {
-
+ 
+    .container-row:nth-child(2) {
+        flex-direction: column-reverse;
     }
-
-    .geel  {
-    
+    .container-column {
+        width: 100% !important;
     }
-
-    .lichtblauw  {
-    
+ 
+    .container.groen,
+    .container.roze {
+        display: none;
     }
-
-    .donkerrood  {
-    
+ 
+    .container.lichtblauw {
+        width: 100%;
+        height: 200px;
     }
+ 
+    .container.donkerrood {
+        height: 200px;
+    }
+ 
 }

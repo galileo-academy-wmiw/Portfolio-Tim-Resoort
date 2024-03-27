@@ -1,0 +1,127 @@
+:root {
+    --marg: 5px;
+}
+
+.flex-con {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    align-items: flex-end;
+    margin: 10px auto;
+}
+
+.flex-con-1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 500px;
+    margin: 10px auto;
+}
+
+.flex-column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100%;
+
+}
+
+.flex-con-2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.licht-rood {
+    background-color: #ffa0a0;
+}
+
+.rood {
+    background-color: #f05050;
+    width: calc(25% - var(--marg) * 2);
+    height: 100%;
+    margin: var(--marg);
+
+}
+
+.licht-paars {
+    background-color: #a0a0ff;
+}
+
+.paars {
+    background-color: #1919c5;
+    width: calc(25% - var(--marg) * 2);
+    height: calc(50% - var(--marg) * 2);
+    margin: var(--marg);
+}
+
+.geel {
+    background-color: #f0f050;
+    width: calc(75% - var(--marg) * 2);
+    height: calc(50% - var(--marg) * 2);
+    margin: var(--marg);
+}
+
+.roze {
+    background-color: #f050f0;
+    width: calc(100% - var(--marg) * 2);
+    height: calc(50% - var(--marg) * 2);
+    margin: var(--marg);
+}
+
+.licht-groen {
+    background-color: #a0ffa0;
+}
+
+.groen {
+    background-color: #50f050;
+    width: 33%;
+    height: 100%;
+    margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .licht-rood {
+        height: 200px;
+    }
+    
+    .rood {
+        width: 50%;
+    }
+    
+    .licht-paars {
+        height: 600px;
+    }
+    
+    .paars {
+        
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: row;
+        align-items: conter;
+    }
+    
+    .geel {
+
+    }
+    
+    .vel-roze {
+
+    }
+    
+    .licht-groen {
+        height: 200px;
+    }
+    
+    .groen {
+
+    }
+}
