@@ -1,5 +1,5 @@
 :root {
-    --marg: 5px;
+    --marg: 10px;
 }
 
 .flex-con {
@@ -17,19 +17,24 @@
     flex-direction: row;
     width: 100%;
     height: 500px;
-    margin: 10px auto;
 }
 
 .flex-column {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row-reverse;
     width: 100%;
-    height: 100%;
-
+    gap: 10px;
+    margin: 10px 10px 0px 10px;
 }
 
 .flex-con-2 {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    padding: 0px 10px 30px 10px;
+}
+
+.flex-con-3 {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -56,23 +61,20 @@
 
 .paars {
     background-color: #1919c5;
-    width: calc(25% - var(--marg) * 2);
-    height: calc(50% - var(--marg) * 2);
-    margin: var(--marg);
+    width: calc(100% / 3);
+    height: 220px;
 }
 
 .geel {
     background-color: #f0f050;
-    width: calc(75% - var(--marg) * 2);
-    height: calc(50% - var(--marg) * 2);
-    margin: var(--marg);
+    width: calc(100% * 2 / 3);
+    height: 220px;
 }
 
 .roze {
     background-color: #f050f0;
-    width: calc(100% - var(--marg) * 2);
-    height: calc(50% - var(--marg) * 2);
-    margin: var(--marg);
+    width: 100%;
+    height: 250px;
 }
 
 .licht-groen {
@@ -82,7 +84,7 @@
 .groen {
     background-color: #50f050;
     width: 33%;
-    height: 100%;
+    height: 100px;
     margin: 10px;
 }
 
@@ -95,33 +97,38 @@
         width: 50%;
     }
     
+    .flex-column {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .licht-paars {
         height: 600px;
     }
     
     .paars {
-        
-    }
-
-    .flex-column {
-        display: flex;
-        flex-direction: row;
-        align-items: conter;
+        width: 50%;
+        height: 140px;
     }
     
     .geel {
-
+        width: 100%;
+        height: 140px;
     }
     
-    .vel-roze {
-
+    .roze {
+        height: 280px;
     }
     
     .licht-groen {
+        justify-content: space-evenly;
         height: 200px;
     }
     
     .groen {
-
+        width: calc(100% - var(--marg) * 2);
+        height: calc(50% - var(--marg) * 2);
     }
 }
