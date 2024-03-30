@@ -168,6 +168,124 @@
     Margin: 0px 0px 0px 5px;
 }
 
-@media only screen and (width: 600px) {
+@media only screen and (max-width: 600px) {
+    .con-donker-rood {
+        display: flex;
+        flex-wrap: wrap;
+        height: 300px;
+    }
+    
+    .rood {
+        width: 100%;
+        margin: 10px 10px 5px 10px;
+    }
 
+    .groen {
+        width: calc(100% / 2 - 15px);
+        margin: 5px 5px 10px 10px;
+    }
+    
+    .blauw {
+        width: calc(100% / 2 - 15px);
+        margin: 5px 10px 10px 5px;
+    }
+
+    .con-donker-groen {
+        height: 300px;
+    } 
+    
+    .geel {
+        height: 280px;
+        width: calc(100% / 2 - 15px);
+        margin: 10px 5px 10px 10px;
+    }
+    
+    .licht-paars {
+        height: 280px;
+        width: calc(100% / 2 - 15px);
+        margin: 10px 10px 10px 5px;
+    }
+
+    .con-donker-blauw {
+        display: flex;
+        flex-wrap: wrap;
+        height: 630px;
+    }
+    
+    .con-magenta {
+        height: 300px;
+        width: 100%;
+        margin: 10px 10px 5px 10px;
+    }
+    
+    .turquoise {
+        background-color: var(--turquoise);
+        height: 280px;
+        width: 50%;
+        margin: 10px 5px 10px 10px;
+    }
+    
+    .paars {
+        background-color: var(--paars);
+        height: 280px;
+        width: 50%;
+        margin: 10px 10px 10px 5px;
+    }
+    
+    .con-licht-geel {
+        height: 300px;
+        width: 100%;
+        margin: 5px 10px 10px 10px;
+    }
+
+    .licht-blauw {
+        height: calc(250px / 4);
+        width: 100%;
+        margin: 10px 10px 5px 10px;
+    }
+    
+    .licht-blauw-1 {
+        height: calc(250px / 4);
+        width: 100%;
+        margin: 5px 10px 5px 10px;
+    }
+    
+    .licht-blauw-2 {
+        height: calc(250px / 4);
+        width: 100%;
+        margin: 5px 10px 5px 10px;
+    }
+    
+    .licht-blauw-3 {
+        height: calc(250px / 4);
+        width: 100%;
+        margin: 5px 10px 10px 10px;
+    }
+    
+    .con-gif-groen {
+        display: flex;
+        flex-wrap: wrap;
+        height: 300px;
+    }
+    
+    .roze{
+        background-color: var(--licht-turquoise);
+        height: 135px;
+        width: 100%;
+        Margin: 10px 10px 5px 10px;
+    }
+    
+    .licht-turquoise {
+        background-color: var(--roze);
+        height: 65px;
+        width: 100%;
+        Margin: 5px 10px 5px 10px;
+        
+    }
+    
+    .lucht-blauw {
+        height: 60px;
+        width: 100%;
+        Margin: 5px 10px 10px 10px;
+    }
 }
