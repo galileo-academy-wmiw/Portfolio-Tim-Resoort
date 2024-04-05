@@ -124,10 +124,10 @@ header img {
 
 .over-ons-container {
     display: grid;
-    height: 450px;
-    width: 1100px;
+    max-width: 1100px;
     grid-template-columns: 1fr 2fr;
     margin: 100px auto;
+    gap: 50px;
 }
 
 .over-ons img {
@@ -142,11 +142,10 @@ header img {
 
 .contact-container {
     display: grid;
-    height: 350px;
-    width: 1010px;
+    max-width: 1100px;
     grid-template-columns: 2fr 1fr;
-    margin: auto;
-    margin-bottom: 100px;
+    margin: 100px auto;
+    gap: 50px;
 }
 
 .contact-info {
@@ -212,4 +211,10 @@ footer {
     padding: 10px;
     max-width: 1025px;
     justify-content: space-between;
+}
+
+/* Contact pagina */
+
+.contact-image {
+    background-image: url("./Foto\'s\ website/Image-3.jpg");
 }
