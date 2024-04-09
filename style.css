@@ -117,7 +117,7 @@ header img {
 
 
 .home-image {
-    background-image: url("./Foto\'s\ website/Image-6.jpg");
+    background-image: url("./Foto\'s-website/Image-6.jpg");
            
 }
 
@@ -143,6 +143,10 @@ header img {
     margin-left: 5px;
 }
 
+.over-ons-info p {
+    margin-bottom: 25px;
+}
+
 .contact-container {
     display: grid;
     max-width: 1000px;
@@ -159,6 +163,10 @@ header img {
     margin-left: 5px;
 }
 
+.contact-info p {
+    margin-bottom: 25px;
+}
+
 .contact img {
     object-fit: cover;
     width: 340px;
@@ -167,11 +175,11 @@ header img {
 
 .button {
     background-color: var(--primary);
-    height: 35px;
-    width: 110px;
+    padding: 8px 30px;
     border: 0;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    margin-top: 10px;
 }
 
 .button:hover {
@@ -182,7 +190,7 @@ header img {
 footer {
     position: inherit;
     bottom: 0;
-    padding: 0px auto;
+    padding: 0px;
     width: 100%;
     height: 5em;
     background-color: var(--primary);
@@ -197,10 +205,154 @@ footer {
     justify-content: space-between;
 }
 
+.footer-width p {
+    margin: auto 0;
+}
+/*----------------------------------------------------------------*/
+@media only screen and (min-width: 600px) {
+    .current {
+        border-bottom: 3px solid var(--primary);
+    }
+    
+    header {
+        position: fixed;
+        top: 0;
+        padding: 0px 10px;
+        width: 100%;
+        height: 3.6em;
+        background-color: var(--white);
+        margin-top: auto;
+    }
+    
+    .logo {
+        object-fit: cover;
+        display: inline-block;
+        margin-top: 2px;
+    }
+    
+    
+    header img {
+        height: 3.0em;
+    }
+    
+    
+    .header-width {
+        display: flex;
+        margin: auto;
+        max-width: 1100px;
+        justify-content: space-between;
+    }
+    
+    .hero-container {
+        display: flex;
+        background-position: center; 
+        background-size: cover;
+        width: 100%;
+        height: 400px;   
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .home-image {
+        background-image: url("./Foto\'s-website/Image-6.jpg");
+               
+    }
+    
+    .over-ons-container {
+        display: grid;
+        max-width: 1000px;
+        grid-template-columns: 1fr 2fr;
+        margin: 50px auto;
+        gap: 25px;
+    }
+    
+    .over-ons img {
+        object-fit: cover;
+        width: 350px;
+        height: 300px;
+    }
+    
+    .over-ons-info {
+        max-width: 800px;
+    }
+    
+    .over-ons-info h3 {
+        margin-left: 5px;
+    }
+    
+    .over-ons-info p {
+        margin-bottom: 25px;
+    }
+    
+    .contact-container {
+        display: grid;
+        max-width: 1000px;
+        grid-template-columns: 2fr 1fr;
+        margin: 50px auto;
+        gap: 25px;
+    }
+    
+    .contact-info {
+        max-width: 800px;
+    }
+    
+    .contact-info h3 {
+        margin-left: 5px;
+    }
+    
+    .contact-info p {
+        margin-bottom: 25px;
+    }
+    
+    .contact img {
+        object-fit: cover;
+        width: 340px;
+        height: 320px;
+    }
+    
+    .button {
+        background-color: var(--primary);
+        padding: 8px 30px;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+        margin-top: 10px;
+    }
+    
+    .button:hover {
+        background-color: var(--prim-dark);
+        cursor: pointer;
+    }
+    
+    footer {
+        position: inherit;
+        bottom: 0;
+        padding: 0px;
+        width: 100%;
+        height: 5em;
+        background-color: var(--primary);
+        margin-top: auto;
+    }
+    
+    .footer-width {
+        display: flex;
+        margin: auto;
+        padding: 10px;
+        max-width: 1025px;
+        justify-content: space-between;
+    }
+    
+    .footer-width p {
+        margin: auto 0;
+    }    
+}
+/*----------------------------------------------------------------*/
+
 /* Over ons pagina */
 
 .over-ons-image {
-    background-image: url("./Foto\'s\ website/Image-4.jpg");
+    background-image: url("./Foto\'s\-website/Image-4.jpg");
 }
 
 .info-over-ons {
@@ -247,44 +399,95 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    color: var(--primary);
     font-size: 40px;
     gap: 25px;
 }
 
-.icons i {
+.icons a i {
     cursor: pointer;
+    color: var(--primary);
 }
+/*----------------------------------------------------------------*/
+@media only screen and (min-width: 600px) {
+    .over-ons-image {
+        background-image: url("./Foto\'s\-website/Image-4.jpg");
+    }
+    
+    .info-over-ons {
+        display: grid;
+        max-width: 1100px;
+        grid-template-columns: 3fr;
+        margin: 25px auto;
+    }
+    
+    .example-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .example-image img {
+        object-fit: cover;
+        width: 1000px;
+        height: 200px;
+        border: solid black 1px;
+    }
+    
+    .profile-container {
+        display: flex;
+        max-width: 1100px;
+        gap: 120px;
+        margin: 75px auto;
+    }
+    
+    .profile-container img {
+        max-width: 100%;
+    }
+    
+    .profile-info {
+        display: flex;
+        border: var(--primary) 7px solid;
+        flex-direction: column;
+        border-radius: 0.8%;
+        padding: 50px;
+        gap: 20px;
+    }
+    
+    .icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 40px;
+        gap: 25px;
+    }
+    
+    .icons a i {
+        cursor: pointer;
+        color: var(--primary);
+    }    
+}
+/*----------------------------------------------------------------*/
 
 /* Contact pagina */
 
 .contact-image {
-    background-image: url("./Foto\'s\ website/Image-3.jpg");
+    background-image: url("./Foto\'s\-website/Image-3.jpg");
 }
 
-.contact-info {
+.contact-information {
     display: grid;
     grid-template-columns: 2fr 3fr;
     gap: 100px;
+    max-width: 880px;
     margin: 100px auto;
 }
 
-.info {
-
-}
-
-.contact-info h2 {
+.info h2 {
     border-bottom: 3px solid var(--primary);
 }
 
-.adres {
-    margin-top: 20px;
-}
-
-.telefoon {
-    margin-top: 20px;
-}
-
+.adres,
+.telefoon,
 .mail {
     margin-top: 20px;
 }
@@ -311,7 +514,12 @@ footer {
 }
 
 .textboxes .name {
-    padding: 20px auto;
+    padding: 20px;
+}
+
+.send-button {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .validation-button {
@@ -326,4 +534,137 @@ footer {
 .validation-button:hover {
     background-color: var(--prim-dark);
     cursor: pointer;
+}
+
+.contactformulier {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.contactformulier #name,
+.contactformulier #email,
+.contactformulier #phone {
+    width: 455px;
+}
+
+.contactformulier label {
+    font-size: 20px;
+}
+
+.contactformulier input {
+    font-size: 25px;
+    margin: 15px 0px 30px 0px;
+    border: 2px solid var(--primary);
+    background-color: #f1f1f1;
+}
+
+.contactformulier #formulier {
+    margin: 10px 0px 25px 0px;
+    border: 2px solid var(--primary);
+    background-color: #f1f1f1;
+}
+
+.contactformulier .message {
+    height: 100px;
+    width: 450px;
+}
+/*----------------------------------------------------------------*/
+@media only screen and (min-width: 600px) {
+    .contact-information {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 100px;
+        max-width: 880px;
+        margin: 100px auto;
+    }
+    
+    .info h2 {
+        border-bottom: 3px solid var(--primary);
+    }
+    
+    .adres,
+    .telefoon,
+    .mail {
+        margin-top: 20px;
+    }
+    
+    .openingstijden {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 20px 0px 20px 0px;
+    }
+    
+    .day {
+        padding-right: 5px;
+        border-right: 2px solid var(--primary);
+    }
+    
+    .time {
+        padding-left: 5px;
+    }
+    
+    .textboxes {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .textboxes .name {
+        padding: 20px;
+    }
+    
+    .send-button {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .validation-button {
+        background-color: var(--primary);
+        border: 0px;
+        border-radius: 5px;
+        height: 35px;
+        width: 160px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    }
+    
+    .validation-button:hover {
+        background-color: var(--prim-dark);
+        cursor: pointer;
+    }
+    
+    .contactformulier {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    
+    .contactformulier #name,
+    .contactformulier #email,
+    .contactformulier #phone {
+        width: 455px;
+    }
+    
+    .contactformulier label {
+        font-size: 20px;
+    }
+    
+    .contactformulier input {
+        font-size: 25px;
+        margin: 15px 0px 30px 0px;
+        border: 2px solid var(--primary);
+        background-color: #f1f1f1;
+    }
+    
+    .contactformulier #formulier {
+        margin: 10px 0px 25px 0px;
+        border: 2px solid var(--primary);
+        background-color: #f1f1f1;
+    }
+    
+    .contactformulier .message {
+        height: 100px;
+        width: 450px;
+    }
+    
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-width">
@@ -24,10 +26,11 @@
             </nav>
         </div>
     </header>
+    <main>
         <div class="hero-container contact-image">
             <h1 aria-hidden="true">Contact</h1>
         </div>
-        <div class="contact-info">
+        <div class="contact-information">
             <div class="info">
                 <h2>Hier kunt u ons vinden!</h2>
                 <div class="adres">
@@ -79,21 +82,21 @@
                 </table>
             </div>
             <div class="contactformulier">
-                <div class="textboxes">
+                <form method="post">
                     <label for="name">Naam</label>
-                    <input type="text" class="name">
+                    <input type="text" id="name">
                     <label for="email">Email adres</label>
-                    <input type="text" class="email">
+                    <input type="text" id="email">
                     <label for="phone">Telefoonnummer</label>
-                    <input type="text" class="phone">
+                    <input type="text" id="phone">
                     <label for="message">Bericht</label>
-                    <input type="text" class="Bericht">
-                </div>
-                <div class="send-button">
-                    <button type="button" class="validation-button">Verzenden</button>
-                </div>
+                    <textarea id="message" name="Bericht" rows="6" cols="60"></textarea>
+                    <div class="send-button">
+                        <button type="button" class="validation-button">Verzenden</button>
+                    </div>
+                </form>
             </div>
-            
+
         </div>
     </main>
     <footer>
@@ -109,4 +112,5 @@
         </div>
     </footer>
 </body>
+
 </html>
