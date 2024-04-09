@@ -176,6 +176,7 @@ header img {
 
 .button:hover {
     background-color: var(--prim-dark);
+    cursor: pointer;
 }
 
 footer {
@@ -244,34 +245,85 @@ footer {
 
 .icons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     color: var(--primary);
-    height: 20px;
-    width: 20px;
-    gap: 10px;
+    font-size: 40px;
+    gap: 25px;
 }
 
-footer {
-    position: inherit;
-    bottom: 0;
-    padding: 0px auto;
-    width: 100%;
-    height: 5em;
-    background-color: var(--primary);
-    margin-top: auto;
-}
-
-.footer-width {
-    display: flex;
-    margin: auto;
-    padding: 10px;
-    max-width: 1025px;
-    justify-content: space-between;
+.icons i {
+    cursor: pointer;
 }
 
 /* Contact pagina */
 
 .contact-image {
     background-image: url("./Foto\'s\ website/Image-3.jpg");
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 100px;
+    margin: 100px auto;
+}
+
+.info {
+
+}
+
+.contact-info h2 {
+    border-bottom: 3px solid var(--primary);
+}
+
+.adres {
+    margin-top: 20px;
+}
+
+.telefoon {
+    margin-top: 20px;
+}
+
+.mail {
+    margin-top: 20px;
+}
+
+.openingstijden {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 20px 0px 20px 0px;
+}
+
+.day {
+    padding-right: 5px;
+    border-right: 2px solid var(--primary);
+}
+
+.time {
+    padding-left: 5px;
+}
+
+.textboxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.textboxes .name {
+    padding: 20px auto;
+}
+
+.validation-button {
+    background-color: var(--primary);
+    border: 0px;
+    border-radius: 5px;
+    height: 35px;
+    width: 160px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+}
+
+.validation-button:hover {
+    background-color: var(--prim-dark);
+    cursor: pointer;
 }
