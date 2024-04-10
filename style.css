@@ -76,6 +76,8 @@ li {
     border-bottom: 3px solid var(--primary);
 }
 
+/*home pagina*/
+
 header {
     z-index: 1;
     position: fixed;
@@ -102,7 +104,7 @@ header img {
 .header-width {
     display: flex;
     margin: auto;
-    max-width: 1100px;
+    max-width: 1000px;
     justify-content: space-between;
 }
 
@@ -486,6 +488,7 @@ footer {
 .send-button {
     display: flex;
     justify-content: flex-end;
+    margin-top: 10px;
 }
 
 .validation-button {
@@ -525,7 +528,7 @@ footer {
     background-color: #f1f1f1;
 }
 
-.contactformulier #textarea {
+.contactformulier textarea {
     margin: 10px 0px 25px 0px;
     border: 2px solid var(--primary);
     background-color: #f1f1f1;
@@ -535,7 +538,7 @@ footer {
     height: 100px;
     width: 450px;
 }
-/*----------------------------------------------------------------*/
+
 @media only screen and (max-width: 600px) {
     .contact-information {
         display: flex;
