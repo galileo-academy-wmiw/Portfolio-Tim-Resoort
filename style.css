@@ -75,12 +75,13 @@ li {
 .current {
     border-bottom: 3px solid var(--primary);
 }
+/*------------------------------------------------------------*/
 
 /*home pagina*/
 
 header {
-    z-index: 1;
     position: fixed;
+    z-index: 1;
     top: 0;
     padding: 0px 10px;
     width: 100%;
@@ -104,7 +105,7 @@ header img {
 .header-width {
     display: flex;
     margin: auto;
-    max-width: 1000px;
+    max-width: 1100px;
     justify-content: space-between;
 }
 
@@ -116,50 +117,68 @@ header img {
     height: 400px;   
     justify-content: center;
     align-items: center;
+    margin: 3.6em 0px 0px 0px;
 }
 
 
 .home-image {
     background-image: url("./Foto\'s-website/Image-6.jpg");
-    filter: brightness(90%);
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1100px;
+    height: 900px;
+    margin: 0px auto;
+    gap: 75px;
 }
 
 .over-ons-container {
     display: grid;
-    max-width: 1000px;
     grid-template-columns: 1fr 2fr;
-    margin: 50px auto;
-    gap: 25px;
+    width: 1100px;
+    
+}
+
+.over-ons {
+    height: 300px;
+    width: 350px;
 }
 
 .over-ons img {
     object-fit: cover;
-    width: 350px;
     height: 300px;
+    width: 350px;
 }
 
 .over-ons-info {
     max-width: 800px;
+    margin-top: 10px;
 }
 
 .over-ons-info h3 {
-    margin-left: 5px;
+    margin: 5px 0px 0px 5px;
 }
 
 .over-ons-info p {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .contact-container {
     display: grid;
-    max-width: 1000px;
     grid-template-columns: 2fr 1fr;
-    margin: 50px auto;
-    gap: 25px;
+    justify-items: flex-end;
+    max-width: 1100px;
+    
 }
 
 .contact-info {
+    max-height: 250px;
     max-width: 800px;
+    margin-top: 10px;
 }
 
 .contact-info h3 {
@@ -170,13 +189,19 @@ header img {
     margin-bottom: 25px;
 }
 
+.contact {
+    height: 300px;
+    width: 350px;
+}
+
 .contact img {
     object-fit: cover;
-    width: 340px;
-    height: 320px;
+    height: 300px;
+    width: 350px;
 }
 
 .button {
+    font-family: 'roboto', sans-serif;
     background-color: var(--primary);
     padding: 8px 30px;
     border: 0;
@@ -189,7 +214,7 @@ header img {
     background-color: var(--prim-dark);
     cursor: pointer;
 }
-
+/*------------------------------------------------------------*/
 footer {
     position: inherit;
     bottom: 0;
@@ -211,7 +236,7 @@ footer {
 .footer-width p {
     margin: auto 0;
 }
-
+/*------------------------------------------------------------*/
 @media only screen and (max-width: 600px) {
     header {
         height: 4.3em;
@@ -230,64 +255,97 @@ footer {
         font-size: 50px;
         font-weight: 300;
     }
-
+/*======================================================*/
+    .information {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: start;
+        max-width: 1100px;
+        height: 2000px;
+        margin: 0px auto;
+        gap: 50px;
+    }
+    
     .over-ons-container {
         display: flex;
         flex-direction: column;
-        margin: 50px auto;
+        flex-wrap: wrap;
     }
-
+    
     .over-ons {
-        margin: 0 auto;
+        height: 300px;
+        width: 350px;
+        margin: 20px 0px 0px 20px;
     }
     
     .over-ons img {
-        width: 370px;
-        height: 235px;
+        object-fit: cover;
+        height: 300px;
+        width: 350px;
     }
     
     .over-ons-info {
-        margin: 0px 20px;
+        max-width: 375px;
+        margin: 10px 0px 0px 20px;
     }
     
     .over-ons-info h3 {
-        font-size: 30px;
-        margin-left: 0px;
+        margin: 5px 0px 0px 5px;
     }
     
     .over-ons-info p {
-        margin: 30px 0px 50px 0px;
+        display: flex;
+        align-items: left;
+        margin: 10px 0px 30px 0px;
     }
     
     .contact-container {
         display: flex;
         flex-direction: column-reverse;
-        margin: 50px auto;
-        gap: 25px;
+        flex-wrap: nowrap;
     }
     
     .contact-info {
-        margin: 0px 20px;
+        max-height: 250px;
+        max-width: 800px;
+        margin-top: 10px;
     }
-
-    .contact {
-        margin: 0px auto;
-    }
-
-    .contact img {
-        width: 370px;
-        height: 275px;
-    }
-
+    
     .contact-info h3 {
-        font-size: 30px;
-        margin-left: 0px;
+        margin-left: 5px;
     }
     
     .contact-info p {
-        margin: 30px 0px 50px 0px;
+        margin-bottom: 25px;
     }
     
+    .contact {
+        height: 300px;
+        width: 350px;
+    }
+    
+    .contact img {
+        object-fit: cover;
+        height: 300px;
+        width: 350px;
+    }
+    
+    .button {
+        font-family: 'roboto', sans-serif;
+        background-color: var(--primary);
+        padding: 8px 30px;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+        margin-top: 10px;
+    }
+    
+    .button:hover {
+        background-color: var(--prim-dark);
+        cursor: pointer;
+    }
+/*======================================================*/   
     footer {
         /*footer has space left at the bottom*/
         display: flex;
@@ -314,6 +372,7 @@ footer {
         margin: auto 0;
     }    
 }
+/*------------------------------------------------------------*/
 
 /* Over ons pagina */
 
@@ -374,7 +433,7 @@ footer {
     cursor: pointer;
     color: var(--primary);
 }
-
+/*------------------------------------------------------------*/
 @media only screen and (max-width: 600px) {
     .info-over-ons {
         display: flex;
@@ -435,6 +494,7 @@ footer {
         color: var(--primary);
     }    
 }
+/*------------------------------------------------------------*/
 
 /* Contact pagina */
 
@@ -538,7 +598,7 @@ footer {
     height: 100px;
     width: 450px;
 }
-
+/*------------------------------------------------------------*/
 @media only screen and (max-width: 600px) {
     .contact-information {
         display: flex;
