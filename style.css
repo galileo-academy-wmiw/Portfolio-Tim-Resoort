@@ -72,16 +72,10 @@ li {
     list-style: none;
 }
 
-.current {
-    border-bottom: 3px solid var(--primary);
-}
-/*------------------------------------------------------------*/
-
-/*home pagina*/
+/*----home pagina----*/
 
 header {
     position: fixed;
-    z-index: 1;
     top: 0;
     padding: 0px 10px;
     width: 100%;
@@ -109,6 +103,10 @@ header img {
     justify-content: space-between;
 }
 
+.current {
+    border-bottom: 3px solid var(--primary);
+}
+/*------------------------------------------------------------*/
 .hero-container {
     display: flex;
     background-position: center; 
@@ -117,44 +115,29 @@ header img {
     height: 400px;   
     justify-content: center;
     align-items: center;
-    margin: 3.6em 0px 0px 0px;
 }
 
 
 .home-image {
     background-image: url("./Foto\'s-website/Image-6.jpg");
-}
-
-.information {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1100px;
-    height: 900px;
-    margin: 0px auto;
-    gap: 75px;
-}
+} 
 
 .over-ons-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    width: 1100px;
-    
-}
-
-.over-ons {
-    height: 300px;
-    width: 350px;
+    max-width: 1100px;
+    margin: 50px auto;
+    gap: 30px;
 }
 
 .over-ons img {
-    object-fit: cover;
+    object-fit: fill;
     height: 300px;
     width: 350px;
 }
 
 .over-ons-info {
+    max-height: 250px;
     max-width: 800px;
     margin-top: 10px;
 }
@@ -172,6 +155,8 @@ header img {
     grid-template-columns: 2fr 1fr;
     justify-items: flex-end;
     max-width: 1100px;
+    margin: 50px auto;
+    gap: 30px;
     
 }
 
@@ -187,11 +172,6 @@ header img {
 
 .contact-info p {
     margin-bottom: 25px;
-}
-
-.contact {
-    height: 300px;
-    width: 350px;
 }
 
 .contact img {
@@ -214,7 +194,7 @@ header img {
     background-color: var(--prim-dark);
     cursor: pointer;
 }
-/*------------------------------------------------------------*/
+
 footer {
     position: inherit;
     bottom: 0;
@@ -229,7 +209,7 @@ footer {
     display: flex;
     margin: auto;
     padding: 10px;
-    max-width: 1025px;
+    max-width: 1100px;
     justify-content: space-between;
 }
 
@@ -238,56 +218,23 @@ footer {
 }
 /*------------------------------------------------------------*/
 @media only screen and (max-width: 600px) {
-    header {
-        height: 4.3em;
-    }
-    
-    header img {
-        height: 3.7em;
-    }
-
-    header nav ul {
-        justify-content: center;
-        margin-top: 0px;
-    }
-
-    .hero-container h1 {
-        font-size: 50px;
-        font-weight: 300;
-    }
-/*======================================================*/
-    .information {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: start;
-        max-width: 1100px;
-        height: 2000px;
-        margin: 0px auto;
-        gap: 50px;
+    header .header-width ul {
+        display: none;
     }
     
     .over-ons-container {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    
-    .over-ons {
-        height: 300px;
-        width: 350px;
-        margin: 20px 0px 0px 20px;
+        grid-template-columns: 1fr;
+        margin: 60px 15px;
     }
     
     .over-ons img {
         object-fit: cover;
-        height: 300px;
-        width: 350px;
+        min-height: 240px;
+        min-width: 380px;
     }
     
     .over-ons-info {
-        max-width: 375px;
-        margin: 10px 0px 0px 20px;
+        max-height: 800px;
     }
     
     .over-ons-info h3 {
@@ -295,21 +242,18 @@ footer {
     }
     
     .over-ons-info p {
-        display: flex;
-        align-items: left;
-        margin: 10px 0px 30px 0px;
+        margin-bottom: 60px;
     }
     
     .contact-container {
         display: flex;
         flex-direction: column-reverse;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        margin: 60px 15px;
     }
     
     .contact-info {
-        max-height: 250px;
-        max-width: 800px;
-        margin-top: 10px;
+        max-height: 600px;
     }
     
     .contact-info h3 {
@@ -320,15 +264,10 @@ footer {
         margin-bottom: 25px;
     }
     
-    .contact {
-        height: 300px;
-        width: 350px;
-    }
-    
     .contact img {
         object-fit: cover;
-        height: 300px;
-        width: 350px;
+        min-height: 280px;
+        min-width: 380px;
     }
     
     .button {
@@ -338,47 +277,45 @@ footer {
         border: 0;
         border-radius: 5px;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
-        margin-top: 10px;
     }
     
     .button:hover {
         background-color: var(--prim-dark);
         cursor: pointer;
     }
-/*======================================================*/   
+    
     footer {
-        /*footer has space left at the bottom*/
-        display: flex;
-        position: inherit;
-        bottom: 0;
-        padding: 0px;
-        width: 100%;
-        height: 7.5em;
+        margin-top: auto;
     }
     
     .footer-width {
         display: flex;
-        flex-direction: column-reverse;
-        flex-wrap: wrap;
-    }
-    
-    .footer-width nav {
-        margin-right: 25px;
+        margin: 0;
+        padding: 10px;
+        max-width: 1100px;
+        justify-content: space-between;
     }
     
     .footer-width p {
-        display: flex;
-        justify-content: center;
         margin: auto 0;
     }    
 }
-/*------------------------------------------------------------*/
 
-/* Over ons pagina */
+/*----Over ons pagina----*/
 
 .over-ons-image {
     background-image: url("./Foto\'s\-website/Image-4.jpg");
-    filter: brightness(90%);
+}
+
+.over_ons-information {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1100px;
+    height: 800px;
+    margin: 0px auto;
+    gap: 25px;
 }
 
 .info-over-ons {
@@ -494,31 +431,33 @@ footer {
         color: var(--primary);
     }    
 }
-/*------------------------------------------------------------*/
 
-/* Contact pagina */
+/*----Contact pagina----*/
 
 .contact-image {
     background-image: url("./Foto\'s\-website/Image-3.jpg");
-    filter: brightness(90%);
 }
 
 .contact-information {
     display: grid;
     grid-template-columns: 2fr 3fr;
     gap: 100px;
-    max-width: 880px;
+    max-width: 1100px;
     margin: 100px auto;
 }
 
 .info h2 {
+    width: 77%;
+    font-weight: normal;
+    padding-bottom: 15px;
     border-bottom: 3px solid var(--primary);
 }
 
 .adres,
 .telefoon,
-.mail {
-    margin-top: 20px;
+.mail,
+.openingstijden {
+    margin-top: 25px;
 }
 
 .openingstijden {
@@ -526,6 +465,20 @@ footer {
     flex-direction: column;
     flex-wrap: wrap;
     margin: 20px 0px 20px 0px;
+}
+
+.adres h3,
+.telefoon h3,
+.mail h3,
+.openingstijden h3 {
+    font-weight: normal;
+}
+
+.adres p,
+.telefoon p,
+.mail p,
+td {
+    font-size: 18px;
 }
 
 .day {
@@ -565,33 +518,35 @@ footer {
     cursor: pointer;
 }
 
-.contactformulier {
+.contactformulier form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
 .contactformulier #name,
 .contactformulier #email,
 .contactformulier #phone {
-    width: 455px;
+    width: 100%;
 }
 
 .contactformulier label {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .contactformulier input {
-    font-size: 25px;
-    margin: 15px 0px 30px 0px;
+    font-size: 35px;
     border: 2px solid var(--primary);
     background-color: #f1f1f1;
+    margin: 15px 0px 30px 0px;
 }
 
 .contactformulier textarea {
-    margin: 10px 0px 25px 0px;
+    font-size: 14px;
+    width: 100%;
     border: 2px solid var(--primary);
     background-color: #f1f1f1;
+    margin: 10px 0px 25px 0px;
 }
 
 .contactformulier .message {
