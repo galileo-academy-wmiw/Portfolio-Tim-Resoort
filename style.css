@@ -35,9 +35,12 @@ p {
     line-height: 150%;
 }
 
-/*----Combined-overlay----*/
+/*------Combined-overlay------*/
+
+/*----Header----*/
 
 header {
+    position: sticky;
     width: 100%;
 }
 
@@ -60,9 +63,8 @@ header {
     display: flex;
     flex-direction: row; 
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
-    border-bottom: solid 1px #000;
 }
 
 .header-width h3 {
@@ -101,30 +103,155 @@ header {
     color: var(--grey);
 }
 
+/*----Not working yet----*/
 .current {
     color: var(--grey);
 }
+/*-----------------------*/
 
-/*------------------------------------------------------------------*/
+.link-rep-pagina {
+    margin: auto 0px;
+}
+
+.link-rep-pagina button {
+    color: var(--white);
+    background-color: var(--prime);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+/*----image-container----*/
+
+.hero-container {
+    display: flex;
+    background-position: center; 
+    justify-content: center;
+    background-size: cover;
+    align-items: center;
+    /*----How to make only the background darker?----*/
+    filter: brightness(80%);
+    /*-----------------------------------------------*/
+    color: var(--white);
+    height: 300px;
+    width: 100%;   
+}
+
+.hero-container h3 {
+    transform: scaleY(1.8);
+    font-family: sans-serif;
+    font-size: 22px;
+}
+
+.home-image {
+    background-image: url(./Fietsenmaker/Images/home-hero.jpg);
+}
+
+/*----Footer----*/
+
 footer {
+    color: var(--white);
+    background-color: var(--prime);
+    width: 100%;
+    margin-top: auto;
+}
 
+.copyright {
+    display: flex;
+    align-items: center;
+}
+
+.copyright p {
+    margin: 0px;
+}
+
+.footer-width {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    width: 1000px;
+    margin: auto;
+}
+
+.nav-footer {
+    display: flex;
+    align-items: center;
+}
+
+.nav-footer ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-footer li {
+    list-style: none;
+    margin: 10px;
+}
+
+.nav-footer a {
+    font-size: 17px;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
 }
 
 /*----Home-page----*/
 
+.info-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 
+.klant,
+.bezorging,
+.prijs,
+.tijdsopgaven {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
 
-@media only screen and (max-width: 600px) {
+.klant i,
+.bezorging i,
+.prijs i,
+.tijdsopgaven i {
+    font-size: 15px;
+    color: var(--white);
+    background-color: var(--sec);
+    padding: 10px;
+    border-radius: 100%;
+    margin: 10px;
+}
 
+.klant h5,
+.bezorging h5,
+.prijs h5,
+.tijdsopgaven h5 {
+    transform: scaleY(1.2);
+    font-size: 12px;
+    margin: 0px;
+}
+
+.klant p,
+.bezorging p,
+.prijs p,
+.tijdsopgaven p {
+    display: flex;
+    font-size: 12px;
+    margin: 10px 0px 0px 0px;
 }
 
 /*----Store-page----*/
 
 
-
-@media only screen and (max-width: 600px) {
-
-}
 
 /*----Reparation-page----*/
 
