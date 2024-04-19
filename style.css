@@ -1,0 +1,135 @@
+:root {
+    --prime: #003482;
+    --sec: #dd0000;
+    --black: #000;
+    --white: #fff;
+    --grey: #aaa;
+    --sec-grey: #eee;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: BEBAS NEUE;
+    font-size: 48px;
+    line-height: 130%;
+}
+
+h2 {
+    font-family: BEBAS NEUE;
+    font-size: 38px;
+    line-height: 130%;
+}
+
+h3 {
+    font-family: BEBAS NEUE;
+    font-size: 24px;
+    line-height: 150%;
+}
+
+p {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    line-height: 150%;
+}
+
+/*----Combined-overlay----*/
+
+header {
+    width: 100%;
+}
+
+.openingstijden {
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+    background-color: var(--prime);
+    height: 25px;
+    margin: 0px;
+    
+}
+
+.openingstijden p {
+    margin: 0px;
+    font-weight: lighter;
+}
+
+.header-width {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    border-bottom: solid 1px #000;
+}
+
+.header-width h3 {
+    display: flex;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium';
+    color: var(--prime);
+    cursor: pointer;
+    transform: scaleY(1.5);
+    margin: 15px 0px 15px 0px;
+}
+
+.header-width h3 span {
+    color: var(--sec);
+}
+
+.header-width nav ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 25px 0px 0px;
+}
+
+.header-width li {
+    list-style: none;
+    margin: 10px;
+}
+
+.header-width a {
+    font-size: 17px;
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.header-width a:hover {
+    color: var(--grey);
+}
+
+.current {
+    color: var(--grey);
+}
+
+/*------------------------------------------------------------------*/
+footer {
+
+}
+
+/*----Home-page----*/
+
+
+
+@media only screen and (max-width: 600px) {
+
+}
+
+/*----Store-page----*/
+
+
+
+@media only screen and (max-width: 600px) {
+
+}
+
+/*----Reparation-page----*/
+
+
+
+@media only screen and (max-width: 600px) {
+
+}
