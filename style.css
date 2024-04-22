@@ -63,7 +63,7 @@ header {
     display: flex;
     flex-direction: row; 
     justify-content: space-between;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
 }
 
@@ -169,7 +169,8 @@ footer {
     display: flex;
     flex-direction: row; 
     justify-content: space-between;
-    width: 1000px;
+    height: 3.6em;
+    width: 1100px;
     margin: auto;
 }
 
@@ -197,6 +198,10 @@ footer {
     font-weight: 500;
 }
 
+.nav-footer a:hover {
+    color: var(--grey);
+}
+
 /*----Home-page----*/
 
 .info-container {
@@ -204,10 +209,17 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
 }
 
-.klant,
+.klant {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 70px 50px 70px 50px;
+}
+
 .bezorging,
 .prijs,
 .tijdsopgaven {
@@ -216,27 +228,30 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 70px 50px 70px 50px;
 }
 
 .klant i,
 .bezorging i,
 .prijs i,
 .tijdsopgaven i {
-    font-size: 15px;
+    font-size: 22px;
     color: var(--white);
     background-color: var(--sec);
-    padding: 10px;
+    padding: 14px;
     border-radius: 100%;
-    margin: 10px;
+    margin: 0px 15px 15px 15px;
 }
 
 .klant h5,
 .bezorging h5,
 .prijs h5,
 .tijdsopgaven h5 {
-    transform: scaleY(1.2);
-    font-size: 12px;
+    font-family: sans-serif;
+    color: var(--prime);
+    transform: scale(0.75, 1.4);
+    font-size: 14px;
+    font-weight: bolder;
     margin: 0px;
 }
 
@@ -244,9 +259,37 @@ footer {
 .bezorging p,
 .prijs p,
 .tijdsopgaven p {
-    display: flex;
-    font-size: 12px;
+    text-align: center;
+    font-size: 15px;
     margin: 10px 0px 0px 0px;
+}
+
+.uitleg {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 50px 0px 50px 0px;
+    gap: 10px;
+    background-color: var(--sec-grey);
+
+}
+
+.uitleg .tekst h5 {
+    font-family: sans-serif;
+    color: var(--prime);
+    transform: scale(1, 1.4);
+    font-size: 15px;
+    font-weight: bolder;
+    margin: 5px 0px 0px 0px;
+}
+
+.uitleg .tekst p {
+    max-width: 465px;
+}
+
+.uitleg .image img {
+    height: 380px;
+    width: 550px;
 }
 
 /*----Store-page----*/
