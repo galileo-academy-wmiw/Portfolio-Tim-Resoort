@@ -1,0 +1,386 @@
+:root {
+    --prime: #003482;
+    --sec: #dd0000;
+    --black: #000;
+    --white: #fff;
+    --grey: #aaa;
+    --sec-grey: #eee;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'BEBAS NEUE', sans-serif;
+    font-size: 48px;
+    line-height: 130%;
+}
+
+h2 {
+    font-family: 'BEBAS NEUE', sans-serif;
+    font-size: 38px;
+    line-height: 130%;
+}
+
+h3 {
+    font-family: 'BEBAS NEUE', sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+}
+
+p {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    line-height: 150%;
+}
+
+/*------Combined-overlay------*/
+
+/*----Header----*/
+
+header {
+    position: sticky;
+    width: 100%;
+}
+
+.openingstijden {
+    display: flex;
+    justify-content: center;
+    color: var(--white);
+    background-color: var(--prime);
+    height: 25px;
+    margin: 0px;
+    
+}
+
+.openingstijden p {
+    margin: 0px;
+    font-weight: lighter;
+}
+
+.header-width {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    max-width: 1135px;
+    margin: auto;
+}
+
+.header-width h3 {
+    display: flex;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium';
+    color: var(--prime);
+    cursor: pointer;
+    transform: scaleY(1.5);
+    margin: 15px 0px 15px 0px;
+}
+
+.header-width h3 span {
+    color: var(--sec);
+}
+
+.header-width nav ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 25px 0px 0px;
+}
+
+.header-width li {
+    list-style: none;
+    margin: 10px;
+}
+
+.header-width a {
+    font-size: 17px;
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+}
+
+.header-width a:hover {
+    color: var(--grey);
+}
+
+/*----Not working yet----*/
+.current {
+    color: var(--grey);
+}
+/*-----------------------*/
+
+.link-rep-pagina {
+    margin: auto 0px;
+}
+
+.link-rep-pagina button {
+    color: var(--white);
+    background-color: var(--prime);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+/*----image-container----*/
+
+.hero-container {
+    display: flex;
+    background-position: center; 
+    justify-content: center;
+    background-size: cover;
+    align-items: center;
+    color: var(--white);
+    height: 300px;
+    width: 100%;   
+}
+
+.hero-container h3 {
+    transform: scale(0.9, 1.5);
+}
+
+.home-image {
+    background-image: url(./Fietsenmaker/Images/home-hero.jpg);
+    background-size: cover;
+}
+
+/*----Footer----*/
+
+footer {
+    color: var(--white);
+    background-color: var(--prime);
+    width: 100%;
+    margin-top: auto;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+}
+
+.copyright p {
+    margin: 0px;
+}
+
+.footer-width {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    height: 3.6em;
+    width: 1135px;
+    margin: auto;
+}
+
+.nav-footer {
+    display: flex;
+    align-items: center;
+}
+
+.nav-footer ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-footer li {
+    list-style: none;
+    margin: 10px;
+}
+
+.nav-footer a {
+    font-size: 17px;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.nav-footer a:hover {
+    color: var(--grey);
+}
+
+/*----Home-page----*/
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.klant {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 70px 40px 70px 40px;
+}
+
+.bezorging,
+.prijs,
+.tijdsopgaven {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 40px 70px 40px;
+}
+
+.klant i,
+.bezorging i,
+.prijs i,
+.tijdsopgaven i {
+    font-size: 22px;
+    color: var(--white);
+    background-color: var(--sec);
+    padding: 15px;
+    border-radius: 100%;
+    margin: 0px 15px 15px 15px;
+}
+
+.klant h5,
+.bezorging h5,
+.prijs h5,
+.tijdsopgaven h5 {
+    font-family: sans-serif;
+    color: var(--prime);
+    transform: scale(0.7, 1.4);
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0px;
+}
+
+.klant p,
+.bezorging p,
+.prijs p,
+.tijdsopgaven p {
+    text-align: center;
+    font-size: 16px;
+    margin: 20px;
+}
+
+.uitleg {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 50px 0px 50px 0px;
+    gap: 25px;
+    background-color: var(--sec-grey);
+
+}
+
+.uitleg .tekst h5 {
+    font-family: sans-serif;
+    color: var(--prime);
+    transform: scale(1, 1.4);
+    font-size: 12px;
+    font-weight: bolder;
+    margin: 10px 0px 0px 0px;
+}
+
+.uitleg .tekst p {
+    max-width: 490px;
+}
+
+.uitleg .image img {
+    height: 390px;
+    width: 580px;
+}
+
+/*----Store-page----*/
+
+.winkel-producten {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 25px auto;
+}
+
+.mountain-bike,
+.bmx-fiets,
+.vouwfiets,
+.bromfiets {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 4px var(--sec-grey);
+    margin: 25px auto;
+}
+
+.mountain-bike .icon i,
+.bmx-fiets .icon i,
+.vouwfiets .icon i,
+.bromfiets .icon i {
+    font-size: 22px;
+    color: var(--white);
+    background-color: var(--sec);
+    padding: 15px;
+    border-radius: 100%;
+    margin: 0px 25px 25px 25px;
+}
+
+.product-info h4 {
+    font-family: 'BEBAS NEUE', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--prime);
+    transform: scaleY(1.8);
+}
+
+.product-info h5 {
+    font-family: 'BEBAS NEUE', sans-serif;
+    font-weight: 300;
+    color: var(--prime);
+    font-size: 14px;
+}
+
+.mountain-bike .info-button button,
+.bmx-fiets .info-button button,
+.vouwfiets .info-button button,
+.bromfiets .info-button button {
+    font-family: 'BEBAS NEUE';
+    color: var(--white);
+    background-color: var(--prime);
+    padding: 10px 50px;
+    border-radius: 5px;
+    border: none;
+    margin: 0px 20px 20px 75px;
+}
+
+/*----Reparation-page----*/
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    max-width: 1135px;
+}
+
+.contactformulier {
+    display: flex;
+}
+
+#fname,
+#lname {
+    width: 49%;
+}
+
+#company {
+    width: 100%;
+}
+
+
+
+.algemene-info {
+    height: 400px;
+    width: 20%;
+    background-color: var(--prime);
+    color: var(--white);
+}
+
+/*----Media-Query----*/
+
+@media only screen and (max-width: 600px) {
+
+}
