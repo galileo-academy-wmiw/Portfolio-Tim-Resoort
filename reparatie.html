@@ -28,37 +28,48 @@
                 <h3 aria-hidden="true">PLAN UW REPARATIE</h3>
             </div>
         </header>
-        <main>
-            <div class="contact-info">
-                <div class="contactformulier">
-                    <form method="post">
-                        <label for="fname"></label>
-                        <input id="fname" name="first-name" type="text" required>
-
-                        <label for="lname"></label>
-                        <input id="lname" name="last-name" type="text" required>
-
-                        <label for="email"></label>
-                        <input id="email" name="Email" type="email" required>
-
-                        <label for="company"></label>
-                        <input id="company" name="Company-name" type="text">
-
-                        <label for="checkbox">Heeft u de fiets bij ons gekocht?</label>
-                        <input id="checkbox" name="button" type="radio" value="Ja" required>
-                        <label for="checkbox">Ja</label>
-
-                        <input id="checkbox" name="button" type="radio" value="Nee" required>
-                        <label for="checkbox">Nee</label>
-
-                        <label for="date">Selecteer een datum voor reparatie</label>
-                        <label for="date"></label>
-                        <input id="date" name="Date/Time" type="date" required>
-
-                        <label for="comment"></label>
-                        <textarea id="comment" name="" rows="5" cols="30"></textarea>
-                        <input id="submit" name="submit-button" type="submit">
-                    </form>
+        
+        <div class="contact-box">
+            <div class="contact-container">
+                <form id="contactform" class="form" action="">
+                    <div class="info-box">
+                        <div class="voornaam" class="form-control">
+                            <input type="text" id="voornaam" name="voornaam" placeholder="Voornaam">
+                            <small></small>
+                        </div>
+                        <div class="achternaam" class="form-control">
+                            <input type="text" id="achternaam" name="achternaam" placeholder="Achternaam">
+                            <small></small>
+                        </div>
+                    </div>
+                    <div class="form-control emailveld">
+                        <input type="email" id="email" name="email" placeholder="E-mailadres" novalidate>
+                        <small></small>
+                    </div>
+                    <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" placeholder="Bedrijfsnaam (optioneel)">
+                    <p>Heeft u de fiets bij ons gekocht?</p><br>
+                    <div class="input-container">
+                        <input type="radio" id="ja" name="keuze">
+                        <span class="checkmark"></span>
+                        <label for="ja">Ja</label>
+                    </div>
+                    <div class="input-container">
+                        <input type="radio" id="nee" name="keuze">
+                        <span class="checkmark"></span>
+                        <label for="nee">Nee</label>
+                    </div>
+                    <br>
+                    <label for="reparatie" class="reparatielabel">Selecteer een datum voor reparatie</label>
+                    <div class="form-control datumveld">
+                    <input type="date" id="datum" name="datum">
+                    <small></small>
+                    </div>
+                    <textarea type="text" class="form-control" placeholder="Opmerkingen" id="opmerking"
+                        name="opmerking"></textarea>
+                    <div class="send-button">
+                        <button class="send" type="submit" value="submit">Versturen</button>
+                    </div>
+                </form>
                 </div>
                 <div class="algemene-info">
                     <h5>CONTACTGEGEVENS</h5>
@@ -99,14 +110,13 @@
                                 </tr>
                                 <tr>
                                     <td class="dag">Zondag</td>
-                                    <td class="tijd">gesloten</td>
+                                    <td class="tijd">Gesloten</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-        </main>
         <footer>
             <div class="footer-width">
                 <div class="copyright">
