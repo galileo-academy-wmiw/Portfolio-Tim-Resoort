@@ -489,51 +489,47 @@ td {
     padding-left: 5px;
 }
 
-.contactformulier form {
-    width: 100%;
-}
-
-.contactformulier .name {
-    padding: 20px;
-}
-/*-----------------------------*/
-.validation-button {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: var(--primary);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
-}
-
-.validation-button:hover {
-    background-color: var(--prim-dark);
-    cursor: pointer;
-}
-/*-----------------------------*/
-.contactformulier form {
+form {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: calc(100% - 4px);
 }
 
-.contactformulier #name,
-.contactformulier #email,
-.contactformulier #phone {
-    width: 100%;
+.submit-button {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.contactformulier label {
+.validation-button {
+    font-size: 15px;
+    background-color: var(--primary);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);    
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+input#name,
+input#email,
+input#phone {
+    width: calc(100% - 4px);
+    margin: 20px auto;
+}
+
+label {
     font-size: 25px;
 }
 
-.contactformulier input {
+input {
     font-size: 35px;
     border: 2px solid var(--primary);
     background-color: #f1f1f1;
     margin: 15px 0px 30px 0px;
 }
 
-.contactformulier textarea {
+textarea {
     font-size: 14px;
     width: 100%;
     border: 2px solid var(--primary);
@@ -541,7 +537,7 @@ td {
     margin: 10px 0px 25px 0px;
 }
 
-.contactformulier .message {
+.message {
     height: 100px;
     width: 450px;
 }

@@ -83,16 +83,28 @@
             </div>
             <div class="contactformulier">
                 <form method="post">
-                    <label for="name">Naam</label>
-                    <input type="text" id="name">
-                    <label for="email">Email adres</label>
-                    <input type="text" id="email">
-                    <label for="phone">Telefoonnummer</label>
-                    <input type="text" id="phone">
-                    <label for="message">Bericht</label>
-                    <textarea id="message" name="Bericht" rows="8" cols="75"></textarea>
+                    <div class="name">
+                        <label for="name">Naam</label>
+                        <input type="text" id="name">
+                    </div>
+                
+                    <div class="email">
+                        <label for="email">Email adres</label>
+                        <input type="text" id="email">
+                    </div>
+                    
+                    <div class="phonenumber">
+                        <label for="phone">Telefoonnummer</label>
+                        <input type="text" id="phone">
+                    </div>
+                    
+                    <div class="messagebox">
+                        <label for="message">Bericht</label>
+                        <textarea id="message" name="Bericht" rows="8" cols="75"></textarea>    
+                    </div>
+
                     <div class="submit-button">
-                        <input type="submit" value="Verzenden" class="validation-button">
+                        <button type="submit" value="Verzenden" class="validation-button">Verzenden</button>
                     </div>
                 </form>
             </div>
