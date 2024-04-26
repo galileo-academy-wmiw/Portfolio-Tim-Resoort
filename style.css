@@ -7,6 +7,7 @@
     --sec-grey: #eee;
 }
 
+html,
 body {
     margin: 0;
     padding: 0;
@@ -93,6 +94,8 @@ header {
     margin: 10px;
 }
 
+/*----nav-bar----*/
+
 .header-width a {
     font-size: 17px;
     text-decoration: none;
@@ -100,15 +103,9 @@ header {
     font-weight: 600;
 }
 
-.header-width a:hover {
-    color: var(--grey);
-}
-
-/*----Not working yet----*/
 .current {
-    color: var(--grey);
+    color: var(--grey) !important;
 }
-/*-----------------------*/
 
 .link-rep-pagina {
     margin: auto 0px;
@@ -167,7 +164,7 @@ footer {
     flex-direction: row; 
     justify-content: space-between;
     height: 3.6em;
-    width: 1135px;
+    max-width: 1135px;
     margin: auto;
 }
 
@@ -199,13 +196,71 @@ footer {
     color: var(--grey);
 }
 
-/*----Home-page----*/
+/*------Media-Query------*/
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /*----Header-----*/
+
+    .header-width h3 {
+        margin: 0px 10px;
+    }
+
+    .header-width nav,
+    .link-rep-pagina {
+        visibility: hidden;
+    }
+
+    .hero-container {
+        text-align: center;
+    }
+
+    /*----Footer----*/
+
+    footer {
+        color: var(--white);
+        background-color: var(--prime);
+        width: 100%;
+        margin-top: auto;
+    }
+
+    .footer-width {
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        height: 5.8em;
+        max-width: 1135px;
+        gap: 5px;
+        bottom: 0;
+        margin: 0px auto;
+    }
+}
+
+/*------Home-page------*/
 
 .info-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1135px;
+    margin: 0px auto;
 }
 
 .klant {
@@ -214,7 +269,7 @@ footer {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    padding: 70px 40px 70px 40px;
+    padding: 70px 45px;
 }
 
 .bezorging,
@@ -225,7 +280,7 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 70px 40px 70px 40px;
+    padding: 70px 45px;
 }
 
 .klant i,
@@ -258,19 +313,18 @@ footer {
 .tijdsopgaven p {
     text-align: center;
     font-size: 16px;
-    margin: 20px;
+    margin: 20px auto;
 }
 
 .uitleg {
     display: flex;
     justify-content: center;
-    padding: 50px 0px 50px 0px;
+    padding: 50px 0px;
     gap: 25px;
     background-color: var(--sec-grey);
-
 }
 
-.uitleg .tekst h5 {
+.tekst h5 {
     font-family: sans-serif;
     color: var(--prime);
     transform: scale(1, 1.4);
@@ -289,7 +343,41 @@ footer {
     background-size: cover;
 }
 
-/*----Store-page----*/
+/*------Media-Query------*/
+
+@media only screen and (max-width: 600px) {
+    .uitleg {
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .klant,
+    .bezorging,
+    .prijs,
+    .tijdsopgaven {
+        padding: 30px 45px;
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .image img {
+        width: 90%;
+    }
+
+    .tekst {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        max-width: 90%;
+        margin: auto;
+    }
+}
+
+/*------Store-page------*/
 
 .winkel-producten {
     display: flex;
@@ -337,10 +425,7 @@ footer {
     font-size: 14px;
 }
 
-.mountain-bike .info-button button,
-.bmx-fiets .info-button button,
-.vouwfiets .info-button button,
-.bromfiets .info-button button {
+.info-button button {
     font-family: 'BEBAS NEUE';
     color: var(--white);
     background-color: var(--prime);
@@ -350,7 +435,36 @@ footer {
     margin: 0px 20px 20px 75px;
 }
 
-/*----Reparation-page----*/
+/*------Media-Query------*/
+
+@media only screen and (max-width: 600px) {
+    .mountain-bike,
+    .bmx-fiets,
+    .vouwfiets,
+    .bromfiets {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .mountain-bike .icon i,
+    .bmx-fiets .icon i,
+    .vouwfiets .icon i,
+    .bromfiets .icon i {
+        margin: 0px 0px 5px 0px;
+    }
+
+    .info-button button {
+        margin: 20px auto;
+    }
+
+    .bromfiets {
+        margin-bottom: 0px;
+    }
+}
+
+/*------Reparation-page------*/
 
 .contact-box {
     display: flex;
@@ -537,50 +651,38 @@ table {
     margin-right: auto;
 }
 
-/*----Media-Query----*/
+/*------Media-Query------*/
 
 @media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 28px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    h3 {
-        font-size: 20px;
-    }
-
-    p {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    .header-width h3 {
-        margin: 0px 10px;
-    }
-
-    .header-width nav,
-    .link-rep-pagina {
-        visibility: hidden;
-    }
-
-    .hero-container {
-        text-align: center;
-    }
-
-    .uitleg {
+    .contact-box {
         display: flex;
         flex-direction: column-reverse;
+        align-items: center;
+        margin-bottom: 50px;
     }
 
-    .image img {
-        display: flex;
-        justify-content: center;
-        background-size: cover;
+    input#achternaam,
+    input#voornaam {
+        border-bottom: 2px solid var(--sec-grey);
     }
 
-    .tekst {
-        max-width: 85%;
+    .contact-container p {
+        margin-bottom: 0px;
+    }
+
+    .contact-container label {
+        margin-top: 20px;
+    }
+
+    .algemene-info {
+        width: 85%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .contact-container {
+        width: 90%;
     }
 }
