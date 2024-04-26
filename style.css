@@ -147,7 +147,6 @@ footer {
     color: var(--white);
     background-color: var(--prime);
     width: 100%;
-    margin-top: auto;
 }
 
 .copyright {
@@ -231,13 +230,6 @@ footer {
     }
 
     /*----Footer----*/
-
-    footer {
-        color: var(--white);
-        background-color: var(--prime);
-        width: 100%;
-        margin-top: auto;
-    }
 
     .footer-width {
         display: flex;
@@ -564,7 +556,7 @@ input#email {
     border-bottom: 2px solid var(--prime);
     background-color: var(--sec-grey);
     height: 30px;
-    width: 100%;
+    width: calc(100% - 4px);
     text-indent: 10px;
     margin-bottom: 20px;
 }
