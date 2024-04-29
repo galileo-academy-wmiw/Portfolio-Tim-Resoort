@@ -234,8 +234,7 @@ footer {
     
     .over-ons img {
         object-fit: cover;
-        min-height: 240px;
-        min-width: 380px;
+        max-width: 100%;
     }
     
     .over-ons-info h3 {
@@ -263,8 +262,7 @@ footer {
     
     .contact img {
         object-fit: cover;
-        height: 280px;
-        width: 380px;
+        width: 100%;
     }
     
     .button {
