@@ -89,6 +89,7 @@ header {
     color: var(--prime);
     cursor: pointer;
     transform: scaleY(1.5);
+    width: 100%;
 }
 
 .header-width h3 span {
@@ -232,7 +233,7 @@ footer {
     /*----Header-----*/
 
     .header-width h3 {
-        width: fit-content;
+        width: 100%;
     }
 
     .header-width nav,
@@ -347,7 +348,7 @@ footer {
 .image img {
     height: 390px;
     max-width: 580px;
-    background-size: cover;
+    object-fit: cover;
 }
 
 /*------Media-Query------*/
