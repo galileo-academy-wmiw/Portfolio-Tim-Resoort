@@ -63,7 +63,6 @@ header {
     justify-content: center;
     color: var(--white);
     background-color: var(--prime);
-    height: 25px;
     margin: 0px;
     
 }
@@ -82,10 +81,13 @@ header {
     margin: auto;
 }
 
-.header-width h3 {
+.header-width a {
+    text-decoration: none;
+}
+
+/*.header-width h3 {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    
     color: var(--prime);
     cursor: pointer;
     transform: scaleY(1.5);
@@ -96,20 +98,26 @@ header {
     color: var(--sec);
 }
 
-.header-width nav ul {
+.logo-container {
     display: flex;
-    flex-direction: row;
-    padding: 5px 25px 0px 0px;
-}
-
-.header-width li {
-    list-style: none;
-    margin: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 /*----nav-bar----*/
 
-.header-width a {
+.header-width nav ul {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 40px 0px 0px;
+}
+
+.header-width nav li {
+    list-style: none;
+    margin: 10px;
+}
+
+.header-width nav a {
     font-size: 17px;
     text-decoration: none;
     color: var(--black);
@@ -232,6 +240,9 @@ footer {
 
     /*----Header-----*/
 
+ 
+    
+
     .header-width h3 {
         width: 100%;
     }
@@ -324,11 +335,11 @@ footer {
 }
 
 .uitleg {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     padding: 10px;
     max-width: 1135px;
-    gap: 25px;
     margin: 0px auto;
 }
 
