@@ -85,12 +85,12 @@ header {
     text-decoration: none;
 }
 
-/*.header-width h3 {
+.header-width h3 {
     display: flex;
-    
     color: var(--prime);
     cursor: pointer;
-    transform: scaleY(1.5);
+    transform: scaleY(1.35);
+    margin-left: 5px;
     width: 100%;
 }
 
@@ -191,6 +191,10 @@ footer {
     margin: auto;
 }
 
+.hamburger {
+    display: none;
+}
+
 .nav-footer {
     display: flex;
     align-items: center;
@@ -219,7 +223,17 @@ footer {
     color: var(--grey);
 }
 
-/*------Media-Query------*/
+.nav-tab {
+    display: none;
+}
+
+/*------Media-Query-1200px------*/
+
+@media only screen and (max-width: 1200px) {
+    
+}
+
+/*------Media-Query-600px------*/
 
 @media only screen and (max-width: 600px) {
     h1 {
@@ -240,18 +254,58 @@ footer {
 
     /*----Header-----*/
 
- 
-    
-
     .header-width h3 {
         width: 100%;
     }
 
     .header-width nav,
-    .link-rep-pagina {
+    .link-rep-pagina, 
+    .nav-tab {
         display: none;
     }
 
+    /*---------------------------------------------------------------*/
+    .hamburger {
+        position: relative;
+        display: block;
+        border: none;
+        background-color: var(--white);
+    }
+
+    .hamburger i {
+        font-size: 40px;
+        margin: 15px 15px;
+    }
+
+    .hamburger .bar, .hamburger::after .hamburger::before {
+        content: '';
+        display: block;
+        width: 100%;
+        background-color: var(--white);
+        margin: 6px 0px;
+        transition: 0.4s;
+    }
+    /*---------------------------------------------------------------*/
+    
+    .link-rep-pagina .nav-tab {
+        display: none;
+    }
+    
+    .link-rep-pagina button {
+        display: none;
+    }
+    
+    .nav-tab {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        min-width: 400px;
+        background-color: var(--grey);
+        display: hidden;
+    }
+
+    /*---------------------------------------------------------------*/
     .hero-container {
         text-align: center;
     }
