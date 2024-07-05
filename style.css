@@ -45,8 +45,6 @@ p {
     line-height: 150%;
 }
 
-/*------Combined-overlay------*/
-
 .container-padding {
     padding: 20px;
 }
@@ -106,18 +104,18 @@ header {
 
 /*----nav-bar----*/
 
-.header-width nav ul {
+.web-nav ul {
     display: flex;
     flex-direction: row;
     padding: 5px 40px 0px 0px;
 }
 
-.header-width nav li {
+.web-nav li {
     list-style: none;
     margin: 10px;
 }
 
-.header-width nav a {
+.web-nav a {
     font-size: 17px;
     text-decoration: none;
     color: var(--black);
@@ -191,8 +189,13 @@ footer {
     margin: auto;
 }
 
-.hamburger {
+.hamburger,
+.nav-tab {
     display: none;
+}
+
+.nav-tab.open {
+    display: block;
 }
 
 .nav-footer {
@@ -223,104 +226,32 @@ footer {
     color: var(--grey);
 }
 
-.nav-tab {
+#nav-tab {
     display: none;
 }
 
-/*------Media-Query-1200px------*/
-
-@media only screen and (max-width: 1200px) {
-    
+#nav-tab.open {
+    display: block;
 }
 
-/*------Media-Query-600px------*/
+#button.close i.fa-bars {
+    display: none;
+}
 
-@media only screen and (max-width: 600px) {
-    h1 {
-        font-size: 28px;
-    }
+.hero-container {
+    text-align: center;
+}
 
-    h2 {
-        font-size: 24px;
-    }
+/*----Footer----*/
 
-    h3 {
-        font-size: 20px;
-    }
-
-    p {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    /*----Header-----*/
-
-    .header-width h3 {
-        width: 100%;
-    }
-
-    .header-width nav,
-    .link-rep-pagina, 
-    .nav-tab {
-        display: none;
-    }
-
-    /*---------------------------------------------------------------*/
-    .hamburger {
-        position: relative;
-        display: block;
-        border: none;
-        background-color: var(--white);
-    }
-
-    .hamburger i {
-        font-size: 40px;
-        margin: 15px 15px;
-    }
-
-    .hamburger .bar, .hamburger::after .hamburger::before {
-        content: '';
-        display: block;
-        width: 100%;
-        background-color: var(--white);
-        margin: 6px 0px;
-        transition: 0.4s;
-    }
-    /*---------------------------------------------------------------*/
-    
-    .link-rep-pagina .nav-tab {
-        display: none;
-    }
-    
-    .link-rep-pagina button {
-        display: none;
-    }
-    
-    .nav-tab {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        height: 100%;
-        min-width: 400px;
-        background-color: var(--grey);
-        display: hidden;
-    }
-
-    /*---------------------------------------------------------------*/
-    .hero-container {
-        text-align: center;
-    }
-
-    /*----Footer----*/
-
-    .footer-width {
-        display: flex;
-        flex-direction: column; 
-        justify-content: center;
-        align-items: center;
-        height: 5.8em;
-        gap: 5px;
-        margin: 0px auto;
-    }
+.footer-width {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 5.8em;
+    gap: 5px;
+    margin: 0px auto;
 }
 
 /*------Home-page------*/
@@ -374,6 +305,7 @@ footer {
     font-size: 14px;
     font-weight: 800;
     margin: 0px;
+    z-index: -1;
 }
 
 .klant p,
@@ -404,6 +336,7 @@ footer {
     font-size: 12px;
     font-weight: bolder;
     margin: 10px 0px 0px 0px;
+    z-index: -1;
 }
 
 .tekst p {
@@ -414,38 +347,6 @@ footer {
     height: 390px;
     max-width: 580px;
     object-fit: cover;
-}
-
-/*------Media-Query------*/
-
-@media only screen and (max-width: 600px) {
-    .uitleg {
-        display: flex;
-        justify-content: center;
-        flex-direction: column-reverse;
-    }
-
-    .klant,
-    .row {
-        padding: 30px 45px;
-    }
-
-    .image {
-        display: flex;
-        justify-content: center;
-    }
-
-    .image img {
-        width: 90%;
-    }
-
-    .tekst {
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        max-width: 90%;
-        margin: auto;
-    }
 }
 
 /*------Store-page------*/
@@ -504,35 +405,6 @@ footer {
     border-radius: 5px;
     border: none;
     margin: 0px 20px 20px 75px;
-}
-
-/*------Media-Query------*/
-
-@media only screen and (max-width: 600px) {
-    .mountain-bike,
-    .bmx-fiets,
-    .vouwfiets,
-    .bromfiets {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
-
-    .mountain-bike .icon i,
-    .bmx-fiets .icon i,
-    .vouwfiets .icon i,
-    .bromfiets .icon i {
-        margin: 0px 0px 5px 0px;
-    }
-
-    .info-button button {
-        margin: 20px auto;
-    }
-
-    .bromfiets {
-        margin-bottom: 0px;
-    }
 }
 
 /*------Reparation-page------*/
@@ -701,11 +573,13 @@ input[type="submit"] {
 }
 
 .algemene-info {
+    position: relative;
     padding-top: 20px;
     padding-left: 25px;
     height: 375px;
     width: 32.5%;
     border-radius: 3.5%;
+    z-index: -1;
     background-color: var(--prime);
     color: var(--white);
     text-align: left;
@@ -731,6 +605,191 @@ table {
 /*------Media-Query------*/
 
 @media only screen and (max-width: 600px) {
+
+/**/
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /*----Header-----*/
+    .header-width h3 {
+        width: 100%;
+        margin: 20px 10px;
+    }
+
+    .header-width nav,
+    .link-rep-pagina, 
+    .nav-tab {
+        display: none;
+    }
+
+    /*----nav-bar----*/
+
+    .hamburger {
+        display: initial;
+        width: 72.5px;
+    }
+
+    .hamburger #nav-tab {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0; 
+        bottom: 0;
+        min-height: 915px;
+        min-width: 400px;
+        z-index: 999;
+        background-color: var(--sec-grey);
+        opacity: 0.95;
+    }
+
+    .hamburger #nav-tab span {
+        display: flex;
+        justify-content: right;
+        border: none;
+        background-color: var(--white);
+    }
+
+    .hamburger #nav-tab span i {
+        font-size: 40px;
+        margin: 15px 15px;
+    }
+
+    #menu div i {
+        display: flex;
+        font-size: 40px;
+        margin: 15px 15px;
+    }
+
+    .home-link a {
+        width: 20px;
+    }
+
+    .winkel-link a {
+        width: 140px;
+    }
+
+    .reparatie-link a {
+        width: 165px;
+    }
+
+    #nav-tab {
+        display: none;
+    }
+
+    #nav-tab.open {
+        display: block;
+    }
+
+    #nav-tab.close i {
+        display: none;
+    }
+
+    #nav-tab ul {
+        display: flex;
+        flex-direction: column;
+        line-height: 75px;
+        justify-content: center;
+        align-items: center;
+        min-height: 750px;
+        width: 100%;
+        bottom: 0;
+        padding: 0px 0px;
+    }
+
+    #nav-tab ul li {
+        max-width: 200px;
+        list-style-type: none;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    #nav-tab .link-rep-pagina {
+        display: flex; 
+    }
+
+/*------Home-page------*/
+
+    .uitleg {
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .klant,
+    .row {
+        padding: 30px 45px;
+        z-index: -1;
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .image img {
+        width: 90%;
+    }
+
+    .tekst {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        max-width: 90%;
+        margin: auto;
+    }
+
+/*------Store-page------*/
+
+    .mountain-bike,
+    .bmx-fiets,
+    .vouwfiets,
+    .bromfiets {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .mountain-bike .icon i,
+    .bmx-fiets .icon i,
+    .vouwfiets .icon i,
+    .bromfiets .icon i {
+        margin: 0px 0px 5px 0px;
+    }
+
+    .mountain-bike .product-info,
+    .bmx-fiets .product-info,
+    .vouwfiets .product-info,
+    .bromfiets .product-info {
+        z-index: -1;
+    }
+
+    .info-button button {
+        margin: 20px auto;
+    }
+
+    .bromfiets {
+        margin-bottom: 0px;
+    }
+
+/*------Reparation-page------*/
+
     .contact-box {
         display: flex;
         flex-direction: column-reverse;

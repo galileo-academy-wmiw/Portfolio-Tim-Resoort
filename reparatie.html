@@ -14,23 +14,34 @@
             <p>Elke werkdag open van 08:00 tot 18:00</p>
         </div>
         <div class="header-width">
-            <a href="index.html"><h3>FIETSEN<span>MAKER</span></h3></a>
+            <a href="index.html">
+                <h3>FIETSEN<span>MAKER</span></h3>
+            </a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="winkel.html">Winkel</a></li>
                     <li><a href="reparatie.html" class="current">Reparatie</a></li>
                 </ul>
-            </nav><button onclick="ChangeIcon" class="hamburger">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="winkel.html">Winkel</a></li>
-                    <li><a href="reparatie.html" class="current">Reparatie</a></li>
-                </ul>
             </nav>
+            <div id="menu" class="hamburger">
+                <div id="button">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <nav id="nav-tab">
+                    <span>
+                        <i class="fa-solid fa-x"></i>
+                    </span>
+                    <ul>
+                        <li class="home-link"><a href="index.html">Home</a></li>
+                        <li class="winkel-link"><a href="winkel.html">Winkel</a></li>
+                        <li class="reparatie-link"><a href="reparatie.html">Reparatie</a></li>
+                    </ul>
+                </nav>
+                <div class="link-rep-pagina">
+                    <a href="reparatie.html"><button>Maak een afspraak</button></a>
+                </div>
+            </div>
             <div class="link-rep-pagina">
                 <button href="reparatie.html">Maak een afspraak</button>
             </div>
@@ -45,17 +56,17 @@
             <div class="contact-container">
                 <form id="contactform" class="form" action="">
                     <div class="info-box">
-                        <div class="voornaam" class="form-control">
-                            <input type="text" id="voornaam" name="voornaam" placeholder="Voornaam">
+                        <div class="voornaam form-control">
+                            <input type="text" id="voornaam" name="voornaam" placeholder="Voornaam" required>
                             <small></small>
                         </div>
-                        <div class="achternaam" class="form-control">
-                            <input type="text" id="achternaam" name="achternaam" placeholder="Achternaam">
+                        <div class="achternaam form-control">
+                            <input type="text" id="achternaam" name="achternaam" placeholder="Achternaam" required>
                             <small></small>
                         </div>
                     </div>
                     <div class="form-control emailveld">
-                        <input type="email" id="email" name="email" placeholder="E-mailadres" novalidate>
+                        <input type="email" id="email" name="email" placeholder="E-mailadres" novalidate required>
                         <small></small>
                     </div>
                     <input type="text" id="bedrijfsnaam" name="bedrijfsnaam" placeholder="Bedrijfsnaam (optioneel)">
@@ -73,7 +84,7 @@
                     <br>
                     <label for="reparatie" class="reparatielabel">Selecteer een datum voor reparatie</label>
                     <div class="form-control datumveld">
-                        <input type="date" id="datum" name="datum">
+                        <input type="date" id="datum" name="datum" required>
                         <small></small>
                     </div>
                     <textarea type="text" class="form-control" placeholder="Opmerkingen" id="opmerking"
@@ -88,7 +99,7 @@
                 <p>
                     Teststraat 45<br>
                     1234 AB, testplaats<br><br>
-    
+
                     T: 010 - 123 456 78<br>
                     E: info@fietsenmaker.nl
                 </p>
