@@ -1,6 +1,7 @@
 :root {
     --prime: #003482;
     --sec: #dd0000;
+    --green: #247e4f;
     --black: #000;
     --white: #fff;
     --grey: #aaa;
@@ -139,6 +140,17 @@ header {
     border: none;
 }
 
+/*----nav-tab-validation----*/
+
+small {
+    display: flex;
+    position: relative;
+    float: inline-start;
+    align-items: center;
+    color: crimson;
+    font-weight: bolder;
+}
+
 /*----image-container----*/
 
 .hero-container {
@@ -192,10 +204,6 @@ footer {
 .hamburger,
 .nav-tab {
     display: none;
-}
-
-.nav-tab.open {
-    display: block;
 }
 
 .nav-footer {
@@ -417,7 +425,6 @@ footer {
 }
 
 .contact-container {
-    margin-top: 20px;
     width: 70%;
 }
 
@@ -441,7 +448,7 @@ form textarea {
 .info-box {
     display: flex;
     gap: 15px;
-    margin-bottom: 10px;   
+    margin-bottom: 0px;   
 }
 
 .input-container {
@@ -510,7 +517,7 @@ input#email {
     height: 30px;
     width: calc(100% - 4px);
     text-indent: 10px;
-    margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 input#bedrijfsnaam {
@@ -519,7 +526,7 @@ input#bedrijfsnaam {
     background-color: var(--sec-grey);
     height: 30px;
     text-indent: 10px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 input#datum {
@@ -605,9 +612,6 @@ table {
 /*------Media-Query------*/
 
 @media only screen and (max-width: 600px) {
-
-/**/
-
     h1 {
         font-size: 28px;
     }
@@ -625,12 +629,14 @@ table {
     }
 
     /*----Header-----*/
+
     .header-width h3 {
         width: 100%;
         margin: 20px 10px;
     }
 
     .header-width nav,
+    .menu-link-rep-pagina,
     .link-rep-pagina, 
     .nav-tab {
         display: none;
@@ -653,27 +659,34 @@ table {
         bottom: 0;
         min-height: 915px;
         min-width: 400px;
-        z-index: 999;
-        background-color: var(--sec-grey);
-        opacity: 0.95;
+        z-index: 1;
+        background-color: var(--prime);
+        opacity: 1;
     }
 
     .hamburger #nav-tab span {
         display: flex;
         justify-content: right;
         border: none;
-        background-color: var(--white);
+        height: 82.5px;
+        background-color: var(--prime);
     }
 
     .hamburger #nav-tab span i {
         font-size: 40px;
-        margin: 15px 15px;
+        margin: 20px 25px;
     }
 
     #menu div i {
         display: flex;
         font-size: 40px;
         margin: 15px 15px;
+    }
+
+    #button,
+    #nav-tab,
+    #close-button {
+        opacity: 1;
     }
 
     .home-link a {
@@ -710,6 +723,7 @@ table {
         width: 100%;
         bottom: 0;
         padding: 0px 0px;
+        margin: 0px 0px;
     }
 
     #nav-tab ul li {
@@ -719,8 +733,21 @@ table {
         text-align: center;
     }
 
-    #nav-tab .link-rep-pagina {
+    .home-link a,
+    .winkel-link a,
+    .reparatie-link a,
+    i.fa-solid.fa-x::before {
+        color: var(--white);
+    }
+
+    i.fa-solid.fa-bars::before {
+        color: var(--prime);
+    }
+
+    .hamburger #nav-tab .link-rep-pagina {
         display: flex; 
+        height: 82.5px;
+        width: 100%;
     }
 
 /*------Home-page------*/
