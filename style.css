@@ -140,66 +140,7 @@ header {
     border: none;
 }
 
-/*----nav-tab-validation----*/
-
-small {
-    display: flex;
-    position: relative;
-    float: inline-start;
-    align-items: center;
-    color: crimson;
-    font-weight: bolder;
-}
-
-/*----image-container----*/
-
-.hero-container {
-    display: flex;
-    background-position: center; 
-    justify-content: center;
-    background-size: cover;
-    align-items: center;
-    color: var(--white);
-    height: 300px;
-    width: 100%;   
-}
-
-.hero-container h3 {
-    transform: scale(0.9, 1.5);
-}
-
-.home-image {
-    background-image: url(./Fietsenmaker/Images/home-hero.jpg);
-    background-size: cover;
-}
-
-/*----Footer----*/
-
-footer {
-    bottom: 0;
-    color: var(--white);
-    background-color: var(--prime);
-    width: 100%;
-}
-
-.copyright {
-    display: flex;
-    align-items: center;
-}
-
-.copyright p {
-    margin: 0px;
-}
-
-.footer-width {
-    display: flex;
-    flex-direction: row; 
-    justify-content: space-between;
-    height: 3.6em;
-    bottom: 0;
-    max-width: 1135px;
-    margin: auto;
-}
+/*----nav-tab----*/
 
 .hamburger,
 .nav-tab {
@@ -246,8 +187,68 @@ footer {
     display: none;
 }
 
+/*----nav-tab-validation----*/
+
+small {
+    display: flex;
+    position: relative;
+    float: inline-start;
+    align-items: center;
+    color: crimson;
+    font-weight: bolder;
+}
+
+/*----image-container----*/
+
 .hero-container {
+    display: flex;
+    background-position: center; 
+    justify-content: center;
+    background-size: cover;
+
     text-align: center;
+    
+    align-items: center;
+    color: var(--white);
+    height: 300px;
+    width: 100%;   
+}
+
+.hero-container h3 {
+    transform: scale(0.9, 1.5);
+}
+
+.home-image {
+    background-image: url(./Fietsenmaker/Images/home-hero.jpg);
+    background-size: cover;
+}
+
+/*----Footer----*/
+
+footer {
+    bottom: 0;
+    color: var(--white);
+    background-color: var(--prime);
+    width: 100%;
+}
+
+.copyright {
+    display: flex;
+    align-items: center;
+}
+
+.copyright p {
+    margin: 0px;
+}
+
+.footer-width {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    height: 3.6em;
+    bottom: 0;
+    max-width: 1135px;
+    margin: auto;
 }
 
 /*----Footer----*/
