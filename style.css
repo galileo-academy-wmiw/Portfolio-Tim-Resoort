@@ -1,3 +1,5 @@
+/*----Requirements----*/
+
 :root {
     --primary: #D8BC69;
     --prim-dark: #bf9d39;
@@ -6,6 +8,7 @@
     --grey: #EEE;  
 }
 
+html,
 body {
     display: flex;
     flex-direction: column;
@@ -52,51 +55,22 @@ p {
 
 }
 
-nav {
-    font-size: 18px;
-    color: var(--text);
-}
+/*----Header----*/
 
-ul {
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
-a {
-    text-decoration: none;
-    color: var(--text);
-}
-
-li { 
-    margin: 0px 15px;
-    list-style: none;
-}
-/*------------------------------------------------------------*/
-
-/*----home pagina----*/
 
 header {
     position: sticky;
     top: 0;
-    padding: 0px 10px;
+    padding: 5px 10px;
     width: 100%;
     height: 3.6em;
     background-color: var(--white);
     margin-top: auto;
 }
 
-.logo {
-    object-fit: cover;
-    display: inline-block;
-    margin-top: 2px;
-}
-
-
 header img {
     height: 3.0em;
 }
-
 
 .header-width {
     display: flex;
@@ -111,6 +85,119 @@ header img {
 
 .current {
     border-bottom: 3px solid var(--primary);
+}
+
+/*----web-nav-bar----*/
+
+
+.web-nav {
+    font-size: 18px;
+    color: var(--text);
+}
+
+.web-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.web-nav a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+.web-nav li { 
+    margin: 0px 15px;
+    list-style: none;
+}
+
+/*----nav-tab----*/
+
+
+.hamburger,
+.nav-tab {
+    display: none;
+}
+
+#nav-tab {
+    display: none;
+}
+
+#nav-tab.open {
+    display: block;
+}
+
+#button.close i.fa-bars {
+    display: none;
+}
+
+/*----nav-tab-validation----*/
+
+
+small {
+    display: flex;
+    position: relative;
+    float: inline-start;
+    align-items: center;
+    color: crimson;
+    font-weight: bolder;
+}
+
+
+/*----Footer----*/
+
+footer {
+    position: static;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    bottom: 0px;
+    width: 100%;
+    background-color: var(--primary);
+}
+
+.footer-width {
+    display: flex;
+    margin: auto;
+    padding: 0px;
+    max-width: 1100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-width p {
+    font-size: 18px;
+}
+
+/*----Footer-nav----*/
+
+.footer-width nav {
+    font-size: 18px;
+    color: var(--text);
+}
+
+.footer-width ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-width li {
+    margin: 0px 15px;
+    list-style: none;
+}
+
+.footer-width a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+/*----home-pagina----*/
+
+
+.logo {
+    object-fit: cover;
+    display: inline-block;
+    margin-top: 2px;
 }
 
 .hero-container {
@@ -155,6 +242,11 @@ header img {
     margin-bottom: 20px;
 }
 
+.over-ons-info a {
+    text-decoration: none;
+    color: var(--text);
+}
+
 .contact-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -175,6 +267,11 @@ header img {
 
 .contact-info p {
     margin-bottom: 25px;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: var(--text);
 }
 
 .contact img {
@@ -198,109 +295,8 @@ header img {
     cursor: pointer;
 }
 
-footer {
-    position: static;
-    font-weight: 600;
-    justify-content: center;
-    align-items: center;
-    bottom: 0px;
-    width: 100%;
-    background-color: var(--primary);
-}
+/*----Over-ons-pagina----*/
 
-.footer-width {
-    display: flex;
-    margin: auto;
-    padding: 0px;
-    max-width: 1100px;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-width p {
-    font-size: 18px;
-}
-
-/*------------------------------------------------------------*/
-@media only screen and (max-width: 600px) {
-    header .header-width ul {
-        display: none;
-    }
-    
-    .over-ons-container {
-        grid-template-columns: 1fr;
-        margin: 60px 15px;
-    }
-    
-    .over-ons img {
-        object-fit: cover;
-        max-width: 100%;
-    }
-    
-    .over-ons-info h3 {
-        margin: 5px 0px 0px 5px;
-    }
-    
-    .over-ons-info p {
-        margin-bottom: 60px;
-    }
-    
-    .contact-container {
-        display: flex;
-        flex-direction: column-reverse;
-        flex-wrap: wrap;
-        margin: 60px 15px;
-    }
-    
-    .contact-info h3 {
-        margin-left: 5px;
-    }
-    
-    .contact-info p {
-        margin-bottom: 25px;
-    }
-    
-    .contact img {
-        object-fit: cover;
-        width: 100%;
-    }
-    
-    .button {
-        font-family: 'roboto', sans-serif;
-        background-color: var(--primary);
-        padding: 8px 30px;
-        border: 0;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
-    }
-    
-    .button:hover {
-        background-color: var(--prim-dark);
-        cursor: pointer;
-    }
-    
-    footer {
-        height: 7em;
-        margin-top: auto;
-        margin-bottom: 0px;
-    }
-    
-    .footer-width {
-        display: flex;
-        flex-direction: column-reverse;
-        padding: 0;
-        align-items: center;
-        align-content: center;
-        margin: auto 0;
-    }
-    
-    .footer-width ul {
-        padding-left: 0px;
-    }
-}
-/*------------------------------------------------------------*/
-
-/*----Over ons pagina----*/
 
 .over-ons-image {
     background-image: url("./Foto\'s\-website/Image-4.jpg");
@@ -368,69 +364,9 @@ footer {
     cursor: pointer;
     color: var(--primary);
 }
-/*------------------------------------------------------------*/
-@media only screen and (max-width: 600px) {    
-    .info-over-ons {
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-    }
-
-    .info-over-ons h2 {
-        margin: 30px 0px 10px 0px;
-    }
-    
-    .info-over-ons p {
-        margin-bottom: 0px;
-    }
-
-    .example-image {
-        margin: 0px 20px;
-        height: 300px;
-    }
-    
-    .example-image img {
-        object-fit: fill;
-        width: 100%;
-        height: 300px;
-    }
-    
-    .profile-container {
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        gap: 50px;
-        margin: 20px auto 50px auto;
-    }
-    
-    .profile-container img {
-        width: 100%;
-    }
-    
-    .profile-info {
-        display: flex;
-        border: var(--primary) 7px solid;
-        flex-direction: column;
-        border-radius: 0.8%;
-        padding: 50px;
-        gap: 20px;
-    }
-    
-    .icons {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        font-size: 40px;
-        gap: 25px;
-    }
-    
-    .icons a i {
-        cursor: pointer;
-        color: var(--primary);
-    }    
-}
 
 /*----Contact pagina----*/
+
 
 .contact-image {
     background-image: url("./Foto\'s\-website/Image-3.jpg");
@@ -554,8 +490,161 @@ textarea {
     width: 450px;
 }
 
-/*------------------------------------------------------------*/
+/*----Media-query----*/
+
+
 @media only screen and (max-width: 600px) {
+    /*----Requirements----*/
+    
+
+    header {
+        max-width: 180px;
+        padding: 0px 10px;
+    }
+
+    .header-width ul {
+        display: none;
+    }
+
+    footer {
+        height: 7em;
+        margin-top: auto;
+        margin-bottom: 0px;
+    }
+    
+    .footer-width {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 0;
+        align-items: center;
+        align-content: center;
+        margin: auto 0;
+    }
+    
+    .footer-width ul {
+        padding-left: 0px;
+    }
+    
+    /*----home pagina----*/
+    
+    
+    .over-ons-container {
+        grid-template-columns: 1fr;
+        margin: 60px 15px;
+    }
+    
+    .over-ons img {
+        object-fit: cover;
+        max-width: 100%;
+    }
+    
+    .over-ons-info h3 {
+        margin: 5px 0px 0px 5px;
+    }
+    
+    .over-ons-info p {
+        margin-bottom: 60px;
+    }
+    
+    .contact-container {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        margin: 60px 15px;
+    }
+    
+    .contact-info h3 {
+        margin-left: 5px;
+    }
+    
+    .contact-info p {
+        margin-bottom: 25px;
+    }
+    
+    .contact img {
+        object-fit: cover;
+        width: 100%;
+    }
+    
+    .button {
+        font-family: 'roboto', sans-serif;
+        background-color: var(--primary);
+        padding: 8px 30px;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);
+    }
+    
+    .button:hover {
+        background-color: var(--prim-dark);
+        cursor: pointer;
+    }
+    
+    /*----Over ons pagina----*/
+    
+
+    .info-over-ons {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .info-over-ons h2 {
+        margin: 30px 0px 10px 0px;
+    }
+    
+    .info-over-ons p {
+        margin-bottom: 0px;
+    }
+
+    .example-image {
+        margin: 0px 20px;
+        height: 300px;
+    }
+    
+    .example-image img {
+        object-fit: fill;
+        width: 100%;
+        height: 300px;
+    }
+    
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        gap: 50px;
+        margin: 20px auto 50px auto;
+    }
+    
+    .profile-container img {
+        width: 100%;
+    }
+    
+    .profile-info {
+        display: flex;
+        border: var(--primary) 7px solid;
+        flex-direction: column;
+        border-radius: 0.8%;
+        padding: 50px;
+        gap: 20px;
+    }
+    
+    .icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-size: 40px;
+        gap: 25px;
+    }
+    
+    .icons a i {
+        cursor: pointer;
+        color: var(--primary);
+    }  
+    
+    /*----Contact pagina----*/
+    
+
     .contact-information {
         display: flex;
         flex-direction: column;
