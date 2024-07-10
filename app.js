@@ -59,24 +59,21 @@ closeButton.addEventListener('click', function() {
 
 // Form falidation
 
-const form = document.getElementById('contactform');
+const form = document.querySelector('form');
+const emailValidation = document.getElementById('email');
 
 const errorMessages = {
-    voornaam: {
-        required: 'Voornaam is verplicht',
-        invalid: 'Voornaam moet beginnen met een hoofdletter',
-    },
-    achternaam: {
-        required: 'Achternaam is verplicht',
-        invalid: 'Achternaam moet beginnen met een hoofdletter',
+    name: {
+        required: 'Naam is verplicht',
+        invalid: 'Naam moet beginnen met een hoofdletter',
     },
     email: {
         required: 'Dit veld mag niet leeg zijn',
         invalid: 'Dit is geen geldig e-mailadres',
     },
-    datum: {
+    phone: {
         required: 'Dit veld mag niet leeg zijn',
-        invalid: 'Datum mag niet in het verleden liggen'
+        invalid: 'Telefoonnummer moet precies 10 cijfers bevatten',
     }
 };
 
@@ -84,7 +81,7 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
     let formValid = validateForm();
     if (formValid) {
-        console.log('Formulier is geldig! Verzenden...');
+        console.log('Form is valid! Submitting...');
         form.submit();
         window.location.reload();
     }
@@ -94,63 +91,50 @@ const validateForm = () => {
     let formValid = true;
 
     Array.from(form.elements).forEach(input => {
-        if (input.hasAttribute('required')) {
-            if (input.id === 'voornaam' || input.id === 'achternaam') {
-                if (input.value.trim() === '') {
-                    setErrorFor(input, errorMessages[input.id].required);
-                    formValid = false;
-                } else if (!startsWithUppercase(input.value)) {
+        if (input.id === 'name' || input.id === 'email' || input.id === 'phone') {
+            if (!input.validity.valid) {
+                setErrorFor(input, getErrorMessage(input));
+                formValid = false;
+            } else if (input.id === 'name') {
+                if (!startsWithUppercase(input.value)) {
                     setErrorFor(input, errorMessages[input.id].invalid);
                     formValid = false;
                 } else {
                     capitalizeFirstLetter(input);
                     setSuccessFor(input);
                 }
-            } else if (input.id === 'email') {
-                if (!input.validity.valid) {
-                    setErrorFor(input, getErrorMessage(input));
-                    formValid = false;
-                } else {
-                    setSuccessFor(input);
-                }
-            } else if (input.id === 'datum') {
-                if (input.value.trim() === '') {
-                    setErrorFor(input, errorMessages.datum.required);
-                    formValid = false;
-                } else if (!isValidDate(input.value)) {
-                    setErrorFor(input, errorMessages.datum.invalid);
+            } else if (input.id === 'phone') {
+                if (!isValidPhoneNumber(input.value)) {
+                    setErrorFor(input, errorMessages[input.id].invalid);
                     formValid = false;
                 } else {
                     setSuccessFor(input);
                 }
             } else {
-                if (!input.validity.valid) {
-                    setErrorFor(input, getErrorMessage(input));
-                    formValid = false;
-                } else {
-                    setSuccessFor(input);
-                }
+                setSuccessFor(input);
             }
         }
     });
 
     return formValid;
-}
+};
 
 const getErrorMessage = (element) => {
     if (element.validity.valueMissing) {
-        return errorMessages[element.name]?.required || 'Dit veld is verplicht.';
+        return errorMessages[element.id]?.required || 'This field is required.';
     } else if (element.validity.typeMismatch) {
-        return errorMessages[element.name]?.invalid || 'Ongeldige waarde.';
+        return errorMessages[element.id]?.invalid || 'Invalid value.';
     }
     return '';
 }
 
 const setErrorFor = (input, message) => {
     const formControl = input.parentElement;
-    formControl.classList.add('error');
-    formControl.classList.remove('success');
-    const small = formControl.querySelector('small');
+    let small = formControl.querySelector('small');
+    if (!small) {
+        small = document.createElement('small');
+        formControl.appendChild(small);
+    }
     small.innerText = message;
     small.classList.add('error-message');
     updateBorder(input, false);
@@ -158,10 +142,10 @@ const setErrorFor = (input, message) => {
 
 const setSuccessFor = (input) => {
     const formControl = input.parentElement;
-    formControl.classList.add('success');
-    formControl.classList.remove('error');
     const small = formControl.querySelector('small');
-    small.innerText = '';
+    if (small) {
+        small.innerText = '';
+    }
     updateBorder(input, true);
 }
 
@@ -175,59 +159,38 @@ const updateBorder = (input, isValid) => {
 
 const startsWithUppercase = (value) => {
     return /^[A-Z]/.test(value);
-} 
+}
 
 const capitalizeFirstLetter = (input) => {
     let value = input.value.trim();
     input.value = value.charAt(0).toUpperCase() + value.slice(1);
 }
 
-const isValidDate = (date) => {
-    const today = new Date().toISOString().split('T')[0];
-    return date >= today;
-}
-
-const showError = (element) => {
-    const errorMessage = getErrorMessage(element);
-    const small = element.parentElement.querySelector('small');
-    small.textContent = errorMessage;
-    small.style.display = errorMessage ? 'block' : 'none';
-    element.classList.toggle('valid', !errorMessage);
-    element.classList.toggle('invalid', !!errorMessage);
-    updateBorder(element, !errorMessage);
+const isValidPhoneNumber = (value) => {
+    return /^\d{10}$/.test(value);
 }
 
 Array.from(form.elements).forEach(input => {
-    if (input.hasAttribute('required')) {
+    if (input.id === 'name' || input.id === 'email' || input.id === 'phone') {
         input.addEventListener('input', () => {
-            if (input.id === 'voornaam' || input.id === 'achternaam') {
-                if (input.value.trim() === '') {
-                    setErrorFor(input, errorMessages[input.id].required);
-                } else if (!startsWithUppercase(input.value)) {
+            if (input.id === 'name') {
+                if (!startsWithUppercase(input.value)) {
                     setErrorFor(input, errorMessages[input.id].invalid);
                 } else {
                     capitalizeFirstLetter(input);
                     setSuccessFor(input);
                 }
-            } else if (input.id === 'email') {
-                if (!input.validity.valid) {
-                    setErrorFor(input, getErrorMessage(input));
-                } else {
-                    setSuccessFor(input);
-                }
-            } else if (input.id === 'datum') {
-                if (input.value.trim() === '') {
-                    setErrorFor(input, errorMessages.datum.required);
-                } else if (!isValidDate(input.value)) {
-                    setErrorFor(input, errorMessages.datum.invalid);
+            } else if (input.id === 'phone') {
+                if (!isValidPhoneNumber(input.value)) {
+                    setErrorFor(input, errorMessages[input.id].invalid);
                 } else {
                     setSuccessFor(input);
                 }
             } else {
-                if (!input.validity.valid) {
-                    setErrorFor(input, getErrorMessage(input));
-                } else {
+                if (input.validity.valid) {
                     setSuccessFor(input);
+                } else {
+                    setErrorFor(input, getErrorMessage(input));
                 }
             }
         });
