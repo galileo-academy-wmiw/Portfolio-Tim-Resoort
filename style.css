@@ -508,7 +508,6 @@ input#voornaam {
     text-indent: 10px;
     border: none;
     border-bottom: 2px solid var(--prime);
-    margin-bottom: 10px;
 }
 
 input#email {
@@ -538,7 +537,6 @@ input#datum {
     height: 30px;
     width: 100%;
     text-indent: 5px;
-    margin-bottom: 20px;
     color: var(--grey);    
 }
 
@@ -549,6 +547,7 @@ textarea#opmerking.form-control {
     border: none;
     outline: none;
     border-bottom: 2px solid var(--prime);
+    margin-top: 20px;
     margin-bottom: 20px;
     padding: 10px 10px;
     opacity: 0.75;

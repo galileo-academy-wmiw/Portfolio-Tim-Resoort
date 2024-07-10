@@ -61,61 +61,88 @@ closeButton.addEventListener('click', function() {
 // Form falidation
 
 const form = document.getElementById('contactform');
-const emailValidation = document.getElementById('email');
 
 const errorMessages = {
     voornaam: {
-        required: 'Firstname must be provided',
-        invalid: 'Firstname must start with an uppercase letter',
+        required: 'Voornaam is verplicht',
+        invalid: 'Voornaam moet beginnen met een hoofdletter',
     },
     achternaam: {
-        required: 'Lastname must be provided',
-        invalid: 'Lastname must start with an uppercase letter',
+        required: 'Achternaam is verplicht',
+        invalid: 'Achternaam moet beginnen met een hoofdletter',
     },
     email: {
-        required: 'Field cannot be empty',
-        invalid: 'This is not a valid email address',
+        required: 'Dit veld mag niet leeg zijn',
+        invalid: 'Dit is geen geldig e-mailadres',
     },
     datum: {
-        required: 'Field cannot be empty'
+        required: 'Dit veld mag niet leeg zijn',
+        invalid: 'Datum mag niet verleden tijd zijn'
     }
 };
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
+    let formValid = validateForm();
+    if (formValid) {
+        console.log('Formulier is geldig! Verzenden...');
+        form.submit();
+        window.location.reload();
+    }
+});
+
+const validateForm = () => {
     let formValid = true;
 
     Array.from(form.elements).forEach(input => {
         if (input.hasAttribute('required')) {
-            if (!input.validity.valid) {
-                setErrorFor(input, getErrorMessage(input));
-                formValid = false;
-            } else if (input.id === 'voornaam' || input.id === 'achternaam') {
-                if (!startsWithUppercase(input.value)) {
+            if (input.id === 'voornaam' || input.id === 'achternaam') {
+                if (input.value.trim() === '') {
+                    setErrorFor(input, errorMessages[input.id].required);
+                    formValid = false;
+                } else if (!startsWithUppercase(input.value)) {
                     setErrorFor(input, errorMessages[input.id].invalid);
                     formValid = false;
                 } else {
                     capitalizeFirstLetter(input);
                     setSuccessFor(input);
                 }
+            } else if (input.id === 'email') {
+                if (!input.validity.valid) {
+                    setErrorFor(input, getErrorMessage(input));
+                    formValid = false;
+                } else {
+                    setSuccessFor(input);
+                }
+            } else if (input.id === 'datum') {
+                if (input.value.trim() === '') {
+                    setErrorFor(input, errorMessages.datum.required);
+                    formValid = false;
+                } else if (!isValidDate(input.value)) {
+                    setErrorFor(input, errorMessages.datum.invalid);
+                    formValid = false;
+                } else {
+                    setSuccessFor(input);
+                }
             } else {
-                setSuccessFor(input);
+                if (!input.validity.valid) {
+                    setErrorFor(input, getErrorMessage(input));
+                    formValid = false;
+                } else {
+                    setSuccessFor(input);
+                }
             }
         }
     });
 
-    if (formValid) {
-        console.log('Form is valid! Submitting...');
-        form.submit();
-        window.location.reload();
-    }
-});
+    return formValid;
+}
 
 const getErrorMessage = (element) => {
     if (element.validity.valueMissing) {
-        return errorMessages[element.name]?.required || 'This field is required.';
+        return errorMessages[element.name]?.required || 'Dit veld is verplicht.';
     } else if (element.validity.typeMismatch) {
-        return errorMessages[element.name]?.invalid || 'Invalid value.';
+        return errorMessages[element.name]?.invalid || 'Ongeldige waarde.';
     }
     return '';
 }
@@ -156,6 +183,11 @@ const capitalizeFirstLetter = (input) => {
     input.value = value.charAt(0).toUpperCase() + value.slice(1);
 }
 
+const isValidDate = (date) => {
+    const today = new Date().toISOString().split('T')[0];
+    return date >= today;
+}
+
 const showError = (element) => {
     const errorMessage = getErrorMessage(element);
     const small = element.parentElement.querySelector('small');
@@ -170,17 +202,33 @@ Array.from(form.elements).forEach(input => {
     if (input.hasAttribute('required')) {
         input.addEventListener('input', () => {
             if (input.id === 'voornaam' || input.id === 'achternaam') {
-                if (!startsWithUppercase(input.value)) {
+                if (input.value.trim() === '') {
+                    setErrorFor(input, errorMessages[input.id].required);
+                } else if (!startsWithUppercase(input.value)) {
                     setErrorFor(input, errorMessages[input.id].invalid);
                 } else {
                     capitalizeFirstLetter(input);
                     setSuccessFor(input);
                 }
-            } else {
-                if (input.validity.valid) {
-                    setSuccessFor(input);
-                } else {
+            } else if (input.id === 'email') {
+                if (!input.validity.valid) {
                     setErrorFor(input, getErrorMessage(input));
+                } else {
+                    setSuccessFor(input);
+                }
+            } else if (input.id === 'datum') {
+                if (input.value.trim() === '') {
+                    setErrorFor(input, errorMessages.datum.required);
+                } else if (!isValidDate(input.value)) {
+                    setErrorFor(input, errorMessages.datum.invalid);
+                } else {
+                    setSuccessFor(input);
+                }
+            } else {
+                if (!input.validity.valid) {
+                    setErrorFor(input, getErrorMessage(input));
+                } else {
+                    setSuccessFor(input);
                 }
             }
         });
