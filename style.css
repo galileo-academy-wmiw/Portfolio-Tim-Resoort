@@ -6,6 +6,8 @@
     --text: #1e1e20;
     --white: #FFFFFF; 
     --grey: #EEE;  
+    --green: #247e4f;
+    --red: crimson;
 }
 
 html,
@@ -60,23 +62,24 @@ p {
 
 header {
     position: sticky;
-    top: 0;
-    padding: 5px 10px;
-    width: 100%;
-    height: 3.6em;
     background-color: var(--white);
+    height: 60px;
+    width: 100%;
+    top: 0;
+    /*padding: 5px 10px;*/
     margin-top: auto;
 }
 
 header img {
     height: 3.0em;
+    margin-left: 10px;
 }
 
 .header-width {
     display: flex;
-    margin: auto;
-    max-width: 1100px;
     justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
 }
 
 .header-width li a {
@@ -114,20 +117,7 @@ header img {
 /*----nav-tab----*/
 
 
-.hamburger,
-.nav-tab {
-    display: none;
-}
-
-#nav-tab {
-    display: none;
-}
-
-#nav-tab.open {
-    display: block;
-}
-
-#button.close i.fa-bars {
+.hamburger {
     display: none;
 }
 
@@ -143,8 +133,8 @@ small {
     font-weight: bolder;
 }
 
-
 /*----Footer----*/
+
 
 footer {
     position: static;
@@ -170,6 +160,7 @@ footer {
 }
 
 /*----Footer-nav----*/
+
 
 .footer-width nav {
     font-size: 18px;
@@ -218,15 +209,21 @@ footer {
 .over-ons-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    justify-items: center;
     max-width: 1100px;
-    margin: 50px auto;
+    margin: 100px auto;
     gap: 30px;
+}
+
+.over-ons {
+    margin-right: 30px;
 }
 
 .over-ons img {
     object-fit: fill;
     height: 300px;
     width: 350px;
+    margin-left: 10px;
 }
 
 .over-ons-info {
@@ -251,7 +248,7 @@ footer {
     display: grid;
     grid-template-columns: 2fr 1fr;
     max-width: 1100px;
-    margin: 50px auto;
+    margin: 100px auto;
     gap: 30px;
     
 }
@@ -259,6 +256,7 @@ footer {
 .contact-info {
     width: 95%;
     margin-top: 10px;
+    margin-left: 10px;
 }
 
 .contact-info h3 {
@@ -278,6 +276,7 @@ footer {
     object-fit: cover;
     height: 300px;
     width: 350px;
+    margin-right: 10px;
 }
 
 .button {
@@ -316,7 +315,7 @@ footer {
     display: grid;
     max-width: 1100px;
     grid-template-columns: 3fr;
-    margin: 25px auto;
+    margin: 25px 15px;
 }
 
 .example-image {
@@ -336,7 +335,7 @@ footer {
     display: flex;
     max-width: 1100px;
     gap: 120px;
-    margin: 75px auto;
+    margin: 75px 15px;
 }
 
 .profile-container img {
@@ -378,6 +377,10 @@ footer {
     gap: 100px;
     max-width: 1100px;
     margin: 100px auto;
+}
+
+.info {
+    margin-left: 10px;
 }
 
 .info h2 {
@@ -430,27 +433,17 @@ form {
     flex-wrap: wrap;
 }
 
-.submit-button {
-    display: flex;
-    justify-content: flex-end;
-    width: calc(100% - 10px);
-}
-
-.validation-button {
-    font-size: 15px;
-    background-color: var(--primary);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);    
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-}
-
 .name,
 .email,
 .phonenumber {
     width: calc(100% - 4px);
     margin-right: 15px;
+}
+
+.email,
+.phonenumber,
+.messagebox {
+    margin-top: 10px;
 }
 
 input#name,
@@ -459,23 +452,25 @@ input#phone {
     background-color: var(--grey);
     border: 2px solid var(--primary);
     height: 30px;
-    width: calc(100% - 4px);
+    width: calc(100% - 3px);
     text-indent: 10px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 label {
     font-size: 25px;
+    padding-bottom: 20px;
 }
 
 input {
     border: 2px solid var(--primary);
     background-color: #f1f1f1;
-    margin: 15px 0px 30px 0px;
+    margin: 15px 0px 0px 0px;
 }
 
 textarea {
     height: 120px;
+    width: calc(100% - 34px);
     background-color: var(--grey);
     border: none;
     outline: none;
@@ -490,6 +485,23 @@ textarea {
     width: 450px;
 }
 
+.submit-button {
+    display: flex;
+    justify-content: flex-end;
+    width: calc(100% - 15px);
+    margin-top: 15px;
+}
+
+.validation-button {
+    font-size: 15px;
+    background-color: var(--primary);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19);    
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
 /*----Media-query----*/
 
 
@@ -500,17 +512,18 @@ textarea {
     header {
         width: 100%;
         position: fixed;
-        padding: 0px 10px;
         top: 0;
         right: 0;
         left: 0;
     }
 
-    .header-width .web-nav {
-        display: none;
+    .header-width {
+        margin: 0px 10px;
     }
 
-    
+    .web-nav {
+        display: none;
+    }
 
     footer {
         height: 7em;
@@ -523,6 +536,7 @@ textarea {
         flex-direction: column-reverse;
         padding: 0;
         height: 112.5px;
+        width: 100%;
         align-items: center;
         align-content: center;
         margin: auto 0;
@@ -534,6 +548,118 @@ textarea {
     
     .footer-width ul {
         padding-left: 0px;
+    }
+
+    /*----nav-bar----*/
+
+    .hamburger {
+        display: initial;
+        height: 60px;
+        width: 60px;
+    }
+
+    .hamburger #nav-tab {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0; 
+        bottom: 0;
+        min-height: 915px;
+        min-width: 400px;
+        z-index: 1;
+        background-color: var(--primary);
+        opacity: 1;
+    }
+
+    .hamburger #nav-tab span {
+        display: flex;
+        justify-content: right;
+        border: none;
+        height: 60px;
+        background-color: var(--primary);
+    }
+
+    .hamburger #nav-tab span i {
+        font-size: 50px;
+        margin: 5px 10px;
+    }
+
+    .hamburger #button i {
+        display: flex;
+        font-size: 40px;
+        margin: 10px 15px;
+    }
+
+    #button,
+    #nav-tab,
+    #close-button {
+        opacity: 1;
+    }
+    
+    .home-link a {
+        width: 20px;
+        text-decoration: none;
+    }
+    
+    .over-ons-link a {
+        width: 140px;
+        text-decoration: none;
+    }
+    
+    .contact-link a {
+        width: 165px;
+        text-decoration: none;
+    }
+    
+    #nav-tab {
+        display: none;
+    }
+    
+    #nav-tab.open {
+        display: block;
+    }
+    
+    #nav-tab.close i {
+        display: none;
+    }
+    
+    #nav-tab ul {
+        display: flex;
+        flex-direction: column;
+        line-height: 75px;
+        justify-content: center;
+        align-items: center;
+        min-height: 750px;
+        width: 100%;
+        bottom: 0;
+        padding: 0px 0px;
+        margin: 0px 0px;
+    }
+    
+    #nav-tab ul li {
+        max-width: 200px;
+        list-style-type: none;
+        font-size: 40px;
+        text-align: center;
+    }
+    
+    .home-link a,
+    .over-ons-link a,
+    .contact-link a,
+    i.fa-solid.fa-x::before {
+        color: var(--text);
+    }
+    
+    i.fa-solid.fa-bars::before {
+        color: var(--primary);
+    }
+    
+    .hamburger #nav-tab {
+        display: flex; 
+        height: 82.5px;
+        width: 100%;
     }
 
     /*----home pagina----*/
@@ -694,28 +820,27 @@ textarea {
         display: flex;
         flex-direction: column;
     }
-    
-    .contactformulier .name {
-        padding-right: 20px;
-    }
-    
-    .send-button {
+
+    .submit-button {
         display: flex;
         justify-content: flex-end;
     }
-    
-    .name {
-        padding: 0px;
+
+    .name,
+    .email,
+    .phonenumber {
+        min-width: 365px;
+        max-width: calc(100% - 15px);
+        margin: 10px 0px 0px 0px;
     }
 
-    .contactformulier #name,
-    .contactformulier #email,
-    .contactformulier #phone {
+    .messagebox {
         min-width: 365px;
     }
 
     textarea#message {
-        width: 340px;
+        min-width: 346px;
+        margin-top: 10px;
     }
     
     .contactformulier label {
@@ -729,10 +854,10 @@ textarea {
         margin-top: 10px;
     }
 
-    .send-button {
+    .submit-button {
         display: flex; 
         justify-content: flex-end;
         padding: 0px 0px 0px 0px;
-        margin: 30px 0px 0px 0px;
+        margin: 30px 15px 0px 0px;
     }
 }
