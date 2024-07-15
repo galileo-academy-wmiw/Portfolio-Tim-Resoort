@@ -85,7 +85,7 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
     let formValid = validateForm();
     if (formValid) {
-        console.log('Formulier is geldig! Verzenden...');
+        console.log('Form is valid! Submitting...');
         form.submit();
         window.location.reload();
     }
@@ -108,8 +108,8 @@ const validateForm = () => {
                     setSuccessFor(input);
                 }
             } else if (input.id === 'email') {
-                if (!input.validity.valid) {
-                    setErrorFor(input, getErrorMessage(input));
+                if (!isValidEmail(input.value)) {
+                    setErrorFor(input, errorMessages[input.id].invalid);
                     formValid = false;
                 } else {
                     setSuccessFor(input);
@@ -140,18 +140,20 @@ const validateForm = () => {
 
 const getErrorMessage = (element) => {
     if (element.validity.valueMissing) {
-        return errorMessages[element.name]?.required || 'Dit veld is verplicht.';
+        return errorMessages[element.id]?.required || 'This field is required.';
     } else if (element.validity.typeMismatch) {
-        return errorMessages[element.name]?.invalid || 'Ongeldige waarde.';
+        return errorMessages[element.id]?.invalid || 'Invalid value.';
     }
     return '';
 }
 
 const setErrorFor = (input, message) => {
     const formControl = input.parentElement;
-    formControl.classList.add('error');
-    formControl.classList.remove('success');
-    const small = formControl.querySelector('small');
+    let small = formControl.querySelector('small');
+    if (!small) {
+        small = document.createElement('small');
+        formControl.appendChild(small);
+    }
     small.innerText = message;
     small.classList.add('error-message');
     updateBorder(input, false);
@@ -159,10 +161,10 @@ const setErrorFor = (input, message) => {
 
 const setSuccessFor = (input) => {
     const formControl = input.parentElement;
-    formControl.classList.add('success');
-    formControl.classList.remove('error');
     const small = formControl.querySelector('small');
-    small.innerText = '';
+    if (small) {
+        small.innerText = '';
+    }
     updateBorder(input, true);
 }
 
@@ -183,6 +185,10 @@ const capitalizeFirstLetter = (input) => {
     input.value = value.charAt(0).toUpperCase() + value.slice(1);
 }
 
+const isValidEmail = (value) => {
+    return /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(value);
+}
+
 const isValidDate = (date) => {
     const today = new Date().toISOString().split('T')[0];
     return date >= today;
@@ -201,7 +207,7 @@ const showError = (element) => {
 Array.from(form.elements).forEach(input => {
     if (input.hasAttribute('required')) {
         input.addEventListener('input', () => {
-            if (input.id === 'voornaam' || input.id === 'achternaam') {
+            if (input.id === 'voornaam' || input.id === 'email' || input.id === 'achternaam') {
                 if (input.value.trim() === '') {
                     setErrorFor(input, errorMessages[input.id].required);
                 } else if (!startsWithUppercase(input.value)) {
@@ -211,8 +217,8 @@ Array.from(form.elements).forEach(input => {
                     setSuccessFor(input);
                 }
             } else if (input.id === 'email') {
-                if (!input.validity.valid) {
-                    setErrorFor(input, getErrorMessage(input));
+                if (!isValidEmail(input.value)) {
+                    setErrorFor(input, errorMessages[input.id].invalid);
                 } else {
                     setSuccessFor(input);
                 }
@@ -225,10 +231,10 @@ Array.from(form.elements).forEach(input => {
                     setSuccessFor(input);
                 }
             } else {
-                if (!input.validity.valid) {
-                    setErrorFor(input, getErrorMessage(input));
-                } else {
+                if (input.validity.valid) {
                     setSuccessFor(input);
+                } else {
+                    setErrorFor(input, getErrorMessage(input));
                 }
             }
         });
