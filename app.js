@@ -7,38 +7,6 @@ var navTab = document.getElementById('nav-tab');
 
 navTab.style.display = 'none';
 
-const fadeIn = (menuIcon, duration = 1000) => {
-    menuIcon.style.opacity = 0;
-    menuIcon.style.display = 'block';
-
-    let opacity = 0;
-    const increment = 50 / duration;
-
-    const fade = setInterval(() => {
-        opacity += increment;
-        if (opacity >= 1) {
-            opacity = 1;
-            clearInterval(fade);
-        }
-        menuIcon.style.opacity = opacity;
-    }, 50);
-};
-
-const fadeOut = (closeButton, duration = 10000) => {
-    let opacity = 1;
-    const decrement = 100 / duration;
-
-    const fade = setInterval(() => {
-        opacity -= decrement;
-        if (opacity <= 0) {
-            opacity = 0;
-            clearInterval(fade);
-            closeButton.style.display = 'none';
-        }
-        closeButton.style.opacity = opacity;
-    }, 50);
-};
-
 menuIcon.addEventListener('click', function() {
     if (navTab.style.display == 'none' || navTab.style.display === '') {
         navTab.style.display = 'block';
@@ -56,11 +24,11 @@ closeButton.addEventListener('click', function() {
     menuIcon.classList.remove("close");
     document.body.style.overflow = '';
 });
- 
 
 // Form falidation
 
 const form = document.getElementById('contactform');
+let isFormValid = false;
 
 const errorMessages = {
     voornaam: {
@@ -77,14 +45,14 @@ const errorMessages = {
     },
     datum: {
         required: 'Dit veld mag niet leeg zijn',
-        invalid: 'Datum mag niet verleden tijd zijn'
+        invalid: 'Afspraak kan niet in het verleden gepland worden'
     }
 };
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-    let formValid = validateForm();
-    if (formValid) {
+    isFormValid = validateForm();
+    if (isFormValid) {
         console.log('Form is valid! Submitting...');
         form.submit();
         window.location.reload();
@@ -194,20 +162,10 @@ const isValidDate = (date) => {
     return date >= today;
 }
 
-const showError = (element) => {
-    const errorMessage = getErrorMessage(element);
-    const small = element.parentElement.querySelector('small');
-    small.textContent = errorMessage;
-    small.style.display = errorMessage ? 'block' : 'none';
-    element.classList.toggle('valid', !errorMessage);
-    element.classList.toggle('invalid', !!errorMessage);
-    updateBorder(element, !errorMessage);
-}
-
 Array.from(form.elements).forEach(input => {
     if (input.hasAttribute('required')) {
         input.addEventListener('input', () => {
-            if (input.id === 'voornaam' || input.id === 'email' || input.id === 'achternaam') {
+            if (input.id === 'voornaam' || input.id === 'achternaam') {
                 if (input.value.trim() === '') {
                     setErrorFor(input, errorMessages[input.id].required);
                 } else if (!startsWithUppercase(input.value)) {
@@ -239,8 +197,4 @@ Array.from(form.elements).forEach(input => {
             }
         });
     }
-});
-
-window.addEventListener('beforeunload', function (e) {
-    e.preventDefault();
 });
