@@ -28,6 +28,7 @@ closeButton.addEventListener('click', function() {
 // Form falidation
 
 const form = document.querySelector('form');
+let isFormValid = false;
 
 const errorMessages = {
     name: {
@@ -46,8 +47,8 @@ const errorMessages = {
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-    let formValid = validateForm();
-    if (formValid) {
+    isFormValid = validateForm();
+    if (isFormValid) {
         console.log('Form is valid! Submitting...');
         form.submit();
         window.location.reload();
@@ -180,8 +181,4 @@ Array.from(form.elements).forEach(input => {
             }
         });
     }
-});
-
-window.addEventListener('beforeunload', function (e) {
-    e.preventDefault();
 });
